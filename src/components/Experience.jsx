@@ -3,10 +3,11 @@ import html from "../assets/html.png";
 import css from "../assets/css.png";
 import javascript from "../assets/javascript.png";
 import reactImage from "../assets/react.png";
-import nextjs from "../assets/nextjs.png";
-import graphql from "../assets/graphql.png";
+import java from "../assets/java.png";
+import tensorflow from "../assets/tf.png";
 import github from "../assets/github.png";
 import tailwind from "../assets/tailwind.png";
+import python from "../assets/python.png";
 
 const Experience = () => {
   const techs = [
@@ -42,18 +43,24 @@ const Experience = () => {
     },
     {
       id: 6,
-      src: nextjs,
-      title: "Next JS",
-      style: "shadow-white",
+      src: java,
+      title: "Java",
+      style: "shadow-rose-500",
     },
     {
       id: 7,
-      src: graphql,
-      title: "GraphQL",
-      style: "shadow-pink-400",
+      src: python,
+      title: "Python",
+      style: "shadow-[#2E8A99]",
     },
     {
       id: 8,
+      src: tensorflow,
+      title: "Tensorflow",
+      style: "shadow-[#F05941]",
+    },
+    {
+      id: 9,
       src: github,
       title: "GitHub",
       style: "shadow-gray-400",
