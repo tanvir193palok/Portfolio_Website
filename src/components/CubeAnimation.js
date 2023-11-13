@@ -8,7 +8,7 @@ const CubeAnimation = () => {
     <Canvas camera={{ fov: 25, position: [4, 4, 4] }}>
       <OrbitControls enableZoom={false} autoRotate={true} />
       <ambientLight intensity={1} />
-      <directionalLight position={[1, 2, 3]} />
+      <directionalLight position={[3, 2, 1]} />
       <Cube />
     </Canvas>
   );
