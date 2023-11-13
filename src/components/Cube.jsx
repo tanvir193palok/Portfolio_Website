@@ -16,7 +16,7 @@ const Cube = () => {
         <RenderTexture attach="map">
           <PerspectiveCamera makeDefault position={[0, 0, 5]} />
           <color attach="background" args={["orange"]} />
-          <Text ref={textRef} fontSize={2} color="#000">
+          <Text ref={textRef} fontSize={1} color="#000">
             ThreeJS
           </Text>
         </RenderTexture>

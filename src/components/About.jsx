@@ -41,7 +41,7 @@ const About = () => {
             creating seamless and intuitive user interfaces.
           </p>
         </div>
-        <div className="h-[500px]  md:h-full md:w-full ">
+        <div className="h-[600px]  md:h-full md:w-full ">
           <CubeAnimation />
         </div>
       </div>
