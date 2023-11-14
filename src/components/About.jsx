@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       name="about"
-      className="w-full pt-20 md:pt-32 pb-10 md:pb-64 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
+      className="w-full pt-20 md:pt-60 pb-10 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
     >
       <div className="max-w-screen-xl mx-auto flex flex-col justify-center px-4 w-full h-full lg:flex-row">
         <div className="flex flex-col justify-center h-full w-full">
@@ -14,13 +14,13 @@ const About = () => {
               About
             </p>
           </div>
-          <p className="text-xl text-justify max-w-[70ch] leading-normal md:pr-4  mt-10">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-8">
             Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate with
             a Bachelor of Science in Computer Science from BRAC University.
             Throughout my academic journey, I have acquired knowledge in various
             technologies and principles.
           </p>
-          <p className="text-xl text-justify max-w-[70ch] leading-normal md:pr-4  mt-4">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-2">
             My programming foundation began with core Java, where I honed my
             problem-solving skills for data structures and algorithms. As BRACU
             shifted towards Python, I embraced the language, enhancing my
@@ -31,7 +31,7 @@ const About = () => {
             development into group projects for courses like Database
             Management, System Analysis and Design.
           </p>
-          <p className="text-xl text-justify max-w-[70ch] leading-normal md:pr-4 mt-4">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-2">
             In the realm of Software Engineering, I ventured into React,
             broadening my expertise. Simultaneously, my academic exploration led
             me to the fascinating world of Data Science. This passion steered me
@@ -45,7 +45,7 @@ const About = () => {
         </div>
         <div className="md:h-full md:w-full ">
           <p
-            className="text-xl
+            className="text-lg
            max-w-[70ch] md:pl-4  text-justify leading-normal"
           >
             Currently, I am elevating my expertise in frontend development,
@@ -58,15 +58,15 @@ const About = () => {
             Data Science down the road.
           </p>
           <p
-            className="text-xl
-         max-w-[70ch] md:pl-4  text-justify leading-normal mt-4"
+            className="text-lg
+         max-w-[70ch] md:pl-4  text-justify leading-normal mt-2"
           >
             Despite being a fresher without prior work experience, I am
             enthusiastic about the prospect of showcasing my skills in these
             fields. Given the opportunity, I am eager to contribute and grow in
             a dynamic work environment.
           </p>
-          <div className="h-[600px] md:h-full md:w-full ">
+          <div className="h-[600px] md:h-full md:w-full">
             <CubeAnimation />
           </div>
         </div>
