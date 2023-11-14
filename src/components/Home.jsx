@@ -11,15 +11,16 @@ const Home = () => {
     >
       <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="flex mr-4 flex-col justify-center h-full">
-          <h2 className="text-4xl tracking-tight leading-tight pt-24 sm:text-7xl font-bold text-white">
-            I am a Frontend Developer
+          <h2 className="text-4xl tracking-tight leading-tight pt-24 font-bold text-white">
+            Welcome <p>I'm Tanvir Ahmed Palok</p>
           </h2>
-          <p className="text-gray-400 text-xl md:mt-5 leading-snug py-4 max-w-[70ch]">
-            Certainly! Here's a sample text for your frontend developer about .
-            Whether it's leveraging React for dynamic user interfaces or
-            optimizing performance with efficient code, I thrive on turning
-            challenges into opportunities. Let's collaborate and bring your
-            digital vision to reality! 🌐✨
+          <p className="text-gray-400 text-xl leading-snug py-4 max-w-[70ch]">
+            A Frontend focused Web Developer building the Frontend of Websites
+            and Web Applications that leads to the success of the overall
+            product.
+          </p>
+          <p className="text-[#2E8A99] text-xl mt-2 mb-2 md:mt-4 leading-normal">
+            Enthusiastic Frontend Developer | javascript | React | Java | Python
           </p>
           <div>
             <Link
