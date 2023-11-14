@@ -14,13 +14,13 @@ const About = () => {
               About
             </p>
           </div>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-8">
             Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate with
             a Bachelor of Science in Computer Science from BRAC University.
             Throughout my academic journey, I have acquired knowledge in various
             technologies and principles.
           </p>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-2">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-4">
             My programming foundation began with core Java, where I honed my
             problem-solving skills for data structures and algorithms. As BRACU
             shifted towards Python, I embraced the language, enhancing my
@@ -31,7 +31,7 @@ const About = () => {
             development into group projects for courses like Database
             Management, System Analysis and Design.
           </p>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-2">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4">
             In the realm of Software Engineering, I ventured into React,
             broadening my expertise. Simultaneously, my academic exploration led
             me to the fascinating world of Data Science. This passion steered me
@@ -46,7 +46,7 @@ const About = () => {
         <div className="md:h-full md:w-full ">
           <p
             className="text-lg
-           max-w-[70ch] md:pl-4  text-justify leading-normal"
+           max-w-[70ch] md:pl-4 text-justify leading-normal"
           >
             Currently, I am elevating my expertise in frontend development,
             mastering React, Tailwind CSS, and exploring exciting tools like
@@ -60,7 +60,7 @@ const About = () => {
             my skills in these fields. Given the opportunity, I am eager to
             contribute and grow in a dynamic work environment.
           </p>
-          <div className="h-[600px] md:h-[600px] md:w-full">
+          <div className="h-[600px] md:w-full">
             <CubeAnimation />
           </div>
         </div>
