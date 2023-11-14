@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       name="about"
-      className="w-full pt-20 md:pt-60 pb-10 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
+      className="w-full pt-20 md:pt-60 pb-10 md:pb-64 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
     >
       <div className="max-w-screen-xl mx-auto flex flex-col justify-center px-4 w-full h-full lg:flex-row">
         <div className="flex flex-col justify-center h-full w-full">
@@ -14,7 +14,7 @@ const About = () => {
               About
             </p>
           </div>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-8">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-">
             Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate with
             a Bachelor of Science in Computer Science from BRAC University.
             Throughout my academic journey, I have acquired knowledge in various
@@ -55,18 +55,12 @@ const About = () => {
             my career towards becoming a MERN stack developer. I'm open to
             acquiring additional skills, considering Django and Spring Boot.
             Maintaining my current level of motivation, I envision delving into
-            Data Science down the road.
+            Data Science down the road. Despite being a fresher without prior
+            work experience, I am enthusiastic about the prospect of showcasing
+            my skills in these fields. Given the opportunity, I am eager to
+            contribute and grow in a dynamic work environment.
           </p>
-          <p
-            className="text-lg
-         max-w-[70ch] md:pl-4  text-justify leading-normal mt-2"
-          >
-            Despite being a fresher without prior work experience, I am
-            enthusiastic about the prospect of showcasing my skills in these
-            fields. Given the opportunity, I am eager to contribute and grow in
-            a dynamic work environment.
-          </p>
-          <div className="h-[600px] md:h-full md:w-full">
+          <div className="h-[600px] md:h-full md:w-full ">
             <CubeAnimation />
           </div>
         </div>
