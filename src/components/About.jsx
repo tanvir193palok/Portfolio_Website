@@ -60,7 +60,7 @@ const About = () => {
             my skills in these fields. Given the opportunity, I am eager to
             contribute and grow in a dynamic work environment.
           </p>
-          <div className="h-[600px] md:h-full md:w-full ">
+          <div className="h-[600px] md:h-[600px] md:w-full">
             <CubeAnimation />
           </div>
         </div>
