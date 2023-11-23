@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -30,7 +31,15 @@ const Navbar = () => {
   return (
     <div className="flex justify-between px-4 items-center w-full h-20 text-white bg-black fixed z-50">
       <div>
-        <h1 className="text-5xl font-signature ml-2">Palok</h1>
+        <h1 className="text-5xl font-signature ml-2">
+          <motion.span
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            Palok
+          </motion.span>
+        </h1>
       </div>
 
       <ul className="hidden md:flex">
