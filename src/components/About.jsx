@@ -14,13 +14,13 @@ const About = () => {
               About
             </p>
           </div>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-8">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-8">
             Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate with
             a Bachelor of Science in Computer Science from BRAC University.
             Throughout my academic journey, I have acquired knowledge in various
             technologies and principles.
           </p>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4  mt-4">
+          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4">
             My programming foundation began with core Java, where I honed my
             problem-solving skills for data structures and algorithms. As BRACU
             shifted towards Python, I embraced the language, enhancing my
@@ -44,10 +44,7 @@ const About = () => {
           </p>
         </div>
         <div className="md:h-full md:w-full ">
-          <p
-            className="text-lg
-           max-w-[70ch] md:pl-4 text-justify leading-normal"
-          >
+          <p className="text-lg max-w-[70ch] md:pl-4 text-justify leading-normal">
             Currently, I am elevating my expertise in frontend development,
             mastering React, Tailwind CSS, and exploring exciting tools like
             ThreeJS, Framer Motion, and React Beautiful Dnd. However, my future
