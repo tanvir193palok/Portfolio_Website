@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import html from "../assets/html.png";
 import css from "../assets/css.png";
 import javascript from "../assets/javascript.png";
@@ -8,8 +8,25 @@ import tensorflow from "../assets/tf.png";
 import github from "../assets/github.png";
 import tailwind from "../assets/tailwind.png";
 import python from "../assets/python.png";
+import { motion, useInView } from "framer-motion";
+
+const variants = {
+  initial: { opacity: 0, scale: 0.2 },
+  final: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+      type: "spring",
+      stiffness: 120,
+    },
+  },
+};
 
 const Experience = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { triggerOnce: true });
   const techs = [
     {
       id: 1,
@@ -80,17 +97,24 @@ const Experience = () => {
           <p className="py-8 text-xl">Following are my tech stack</p>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
+        <motion.div
+          variants={variants}
+          initial="initial"
+          animate={isInView && "final"}
+          ref={ref}
+          className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0"
+        >
           {techs.map(({ id, src, title, style }) => (
-            <div
+            <motion.div
+              variants={variants}
               key={id}
               className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
             >
               <img src={src} alt="experience" className="w-20 mx-auto" />
               <p className="mt-4">{title}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

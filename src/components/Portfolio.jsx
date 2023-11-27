@@ -5,8 +5,26 @@ import Project3 from "../assets/portfolio/Project-3.png";
 import Project4 from "../assets/portfolio/Project-4.png";
 import Project5 from "../assets/portfolio/Project-5.png";
 import Project6 from "../assets/portfolio/Project-6.png";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const portfolioVariants = {
+  hidden: { y: 100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+      type: "tween",
+    },
+  },
+};
 
 const Portfolio = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { triggerOnce: true });
+
   const portfolios = [
     {
       id: 1,
@@ -53,17 +71,30 @@ const Portfolio = () => {
       name="portfolio"
       className="bg-gradient-to-b from-black to-gray-800 w-full text-white md:pt-60"
     >
-      <div className="max-w-screen-xl p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pb-8">
+      <motion.div
+        variants={portfolioVariants}
+        initial="hidden"
+        animate={isInView && "visible"}
+        ref={ref}
+        className="max-w-screen-xl p-4 mx-auto flex flex-col justify-center w-full h-full"
+      >
+        <motion.div variants={portfolioVariants} className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
             Portfolio
           </p>
           <p className="py-6 text-xl">Check out some of my work</p>
-        </div>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
+        <motion.div
+          variants={portfolioVariants}
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0"
+        >
           {portfolios.map(({ id, src, liveUrl, gitUrl }) => (
-            <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
+            <motion.div
+              variants={portfolioVariants}
+              key={id}
+              className="shadow-md shadow-gray-600 rounded-lg"
+            >
               <img
                 src={src}
                 alt=""
@@ -83,10 +114,10 @@ const Portfolio = () => {
                   Code
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

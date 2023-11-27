@@ -1,26 +1,54 @@
-import React from "react";
+import React, { useRef } from "react";
 import CubeAnimation from "./CubeAnimation";
+import { motion, useInView } from "framer-motion";
+
+const textVariants = {
+  hidden: { y: 100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1, staggerChildren: 0.2 },
+  },
+};
 
 const About = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { triggerOnce: true });
+
   return (
     <div
       name="about"
       className="w-full pt-20 md:pt-60 pb-10 md:pb-64 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
     >
-      <div className="max-w-screen-xl mx-auto flex flex-col justify-center px-4 w-full h-full lg:flex-row">
-        <div className="flex flex-col justify-center h-full w-full">
-          <div>
+      <motion.div
+        variants={textVariants}
+        initial="hidden"
+        animate={isInView && "visible"}
+        ref={ref}
+        className="max-w-screen-xl mx-auto flex flex-col justify-center px-4 w-full h-full lg:flex-row"
+      >
+        <motion.div
+          variants={textVariants}
+          className="flex flex-col justify-center h-full w-full"
+        >
+          <motion.div variants={textVariants}>
             <p className="text-4xl leading-tight font-bold inline border-b-4 border-gray-500">
               About
             </p>
-          </div>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-8">
+          </motion.div>
+          <motion.p
+            variants={textVariants}
+            className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-8"
+          >
             Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate with
             a Bachelor of Science in Computer Science from BRAC University.
             Throughout my academic journey, I have acquired knowledge in various
             technologies and principles.
-          </p>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4">
+          </motion.p>
+          <motion.p
+            variants={textVariants}
+            className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
+          >
             My programming foundation began with core Java, where I honed my
             problem-solving skills for data structures and algorithms. As BRACU
             shifted towards Python, I embraced the language, enhancing my
@@ -30,8 +58,11 @@ const About = () => {
             websites, showcasing my capabilities. Additionally, I integrated web
             development into group projects for courses like Database
             Management, System Analysis and Design.
-          </p>
-          <p className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4">
+          </motion.p>
+          <motion.p
+            variants={textVariants}
+            className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
+          >
             In the realm of Software Engineering, I ventured into React,
             broadening my expertise. Simultaneously, my academic exploration led
             me to the fascinating world of Data Science. This passion steered me
@@ -41,10 +72,13 @@ const About = () => {
             This journey not only fueled my passion but also served as a
             constant source of motivation and personal growth.
             <br />
-          </p>
-        </div>
-        <div className="md:h-full md:w-full ">
-          <p className="text-lg max-w-[70ch] md:pl-4 text-justify leading-normal">
+          </motion.p>
+        </motion.div>
+        <motion.div variants={textVariants} className="md:h-full md:w-full ">
+          <motion.p
+            variants={textVariants}
+            className="text-lg max-w-[70ch] md:pl-4 text-justify leading-normal"
+          >
             Currently, I am elevating my expertise in frontend development,
             mastering React, Tailwind CSS, and exploring exciting tools like
             ThreeJS, Framer Motion, and React Beautiful Dnd. However, my future
@@ -56,12 +90,12 @@ const About = () => {
             work experience, I am enthusiastic about the prospect of showcasing
             my skills in these fields. Given the opportunity, I am eager to
             contribute and grow in a dynamic work environment.
-          </p>
+          </motion.p>
           <div className="h-[600px] md:w-full">
             <CubeAnimation />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
