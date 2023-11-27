@@ -3,11 +3,11 @@ import { motion, useInView } from "framer-motion";
 
 const aboutVariants = {
   initial: {
-    y: 500,
+    x: 1000,
     opacity: 0,
   },
   final: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: { duration: 1, staggerChildren: 0.1 },
   },
