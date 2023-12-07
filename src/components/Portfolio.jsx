@@ -5,6 +5,9 @@ import Project3 from "../assets/portfolio/Project-3.png";
 import Project4 from "../assets/portfolio/Project-4.png";
 import Project5 from "../assets/portfolio/Project-5.png";
 import Project6 from "../assets/portfolio/Project-6.png";
+import Project7 from "../assets/portfolio/Project7.jpg";
+import Project8 from "../assets/portfolio/Project8.jpg";
+import Project9 from "../assets/portfolio/Project9.jpg";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -28,38 +31,56 @@ const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
+      src: Project7,
+      liveUrl: "https://bistro-cafe.netlify.app/",
+      gitUrl: "https://github.com/tanvir193palok/Restaurant_Website",
+    },
+    {
+      id: 2,
+      src: Project8,
+      liveUrl: "https://palok-gym.netlify.app/",
+      gitUrl: "https://github.com/tanvir193palok/Gym_Website",
+    },
+    {
+      id: 3,
+      src: Project9,
+      liveUrl: "https://tanvir-ahmed-palok-portfolio.netlify.app/",
+      gitUrl: "https://github.com/tanvir193palok/Portfolio_Website",
+    },
+    {
+      id: 4,
       src: Project1,
       liveUrl: "https://tanvir193palok.github.io/E-commerce-Site/",
       gitUrl: "https://github.com/tanvir193palok/E-commerce-Site",
     },
     {
-      id: 2,
+      id: 5,
       src: Project2,
-      liveUrl: "https://tanvir193palok.github.io/login",
+      liveUrl: "https://tanvir193palok.github.io/Quiz-Application/",
       gitUrl: "https://github.com/tanvir193palok/Quiz-Application",
     },
     {
-      id: 3,
+      id: 6,
       src: Project3,
       liveUrl:
         "https://653ebc0b7cf24033aad61f55--deluxe-kitten-e4a77b.netlify.app/",
       gitUrl: "https://github.com/tanvir193palok/ThreeJS-Project",
     },
     {
-      id: 4,
+      id: 7,
       src: Project4,
       liveUrl: "https://tanvir193palok.github.io/MaterialUI-Project/",
       gitUrl: "https://github.com/tanvir193palok/MaterialUI-Project",
     },
     {
-      id: 5,
+      id: 8,
       src: Project5,
       liveUrl: "https://symphonious-genie-d5fd8f.netlify.app/",
       gitUrl:
         "https://github.com/tanvir193palok/Summarizer/tree/main/ai_summarizer",
     },
     {
-      id: 6,
+      id: 9,
       src: Project6,
       liveUrl: "https://chat-gpt-weld-three.vercel.app/",
       gitUrl: "https://github.com/tanvir193palok/ChatGPT",
