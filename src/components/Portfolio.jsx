@@ -61,29 +61,29 @@ const Portfolio = () => {
     },
     {
       id: 6,
+      src: Project6,
+      liveUrl: "https://shimmering-wisp-8a5007.netlify.app/",
+      gitUrl: "https://github.com/tanvir193palok/PixelHarmony",
+    },
+    {
+      id: 7,
       src: Project3,
       liveUrl:
         "https://653ebc0b7cf24033aad61f55--deluxe-kitten-e4a77b.netlify.app/",
       gitUrl: "https://github.com/tanvir193palok/ThreeJS-Project",
     },
     {
-      id: 7,
+      id: 8,
       src: Project4,
       liveUrl: "https://tanvir193palok.github.io/MaterialUI-Project/",
       gitUrl: "https://github.com/tanvir193palok/MaterialUI-Project",
     },
     {
-      id: 8,
+      id: 9,
       src: Project5,
       liveUrl: "https://symphonious-genie-d5fd8f.netlify.app/",
       gitUrl:
         "https://github.com/tanvir193palok/Summarizer/tree/main/ai_summarizer",
-    },
-    {
-      id: 9,
-      src: Project6,
-      liveUrl: "https://chat-gpt-weld-three.vercel.app/",
-      gitUrl: "https://github.com/tanvir193palok/ChatGPT",
     },
   ];
 
