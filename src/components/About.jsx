@@ -77,7 +77,7 @@ const About = () => {
         <motion.div variants={textVariants} className="md:h-full md:w-full ">
           <motion.p
             variants={textVariants}
-            className="text-lg max-w-[70ch] md:pl-4 text-justify leading-normal"
+            className="text-lg max-w-[70ch] mt-4 md:mt-0 md:pl-4 text-justify leading-normal"
           >
             Currently, I am elevating my expertise in frontend development,
             mastering React, Tailwind CSS, and exploring exciting tools like
