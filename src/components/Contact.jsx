@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { CursorContext } from "./context/CursorContext";
 
-const aboutVariants = {
+const contactVariants = {
   initial: {
     x: 1000,
     opacity: 0,
@@ -14,7 +15,7 @@ const aboutVariants = {
 };
 
 const Contact = () => {
-
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
   const isInView = useInView(ref, { triggerOnce: true });
   return (
@@ -22,21 +23,29 @@ const Contact = () => {
       name="contact"
       className="w-full h-full pt-24 md:h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
     >
-      <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
-        <div className="pb-8">
-          <p className="text-4xl  font-bold inline border-b-4 border-gray-500">
+      <motion.div
+        variants={contactVariants}
+        initial="initial"
+        animate={isInView && "final"}
+        ref={ref}
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
+        className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full"
+      >
+        <motion.div variants={contactVariants} className="pb-8">
+          <motion.p
+            variants={contactVariants}
+            className="text-4xl  font-bold inline border-b-4 border-gray-500"
+          >
             Contact
-          </p>
-          <p className="py-6 text-xl">
+          </motion.p>
+          <motion.p variants={contactVariants} className="py-6 text-xl">
             Submit the form below to get in touch with me
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <motion.div
-          variants={aboutVariants}
-          initial="initial"
-          animate={isInView && "final"}
-          ref={ref}
+          variants={contactVariants}
           className="flex justify-center items-center"
         >
           <motion.form
@@ -68,7 +77,7 @@ const Contact = () => {
             </motion.button>
           </motion.form>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

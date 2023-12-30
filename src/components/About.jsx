@@ -1,17 +1,20 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import CubeAnimation from "./CubeAnimation";
 import { motion, useInView } from "framer-motion";
+import { CursorContext } from "./context/CursorContext";
+import { transition1 } from "./Transitions";
 
 const textVariants = {
   hidden: { y: 100, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 1, staggerChildren: 0.2 },
+    transition: { duration: 1, type: "linear", staggerChildren: 0.2 },
   },
 };
 
 const About = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
   const isInView = useInView(ref, { triggerOnce: true });
 
@@ -25,6 +28,9 @@ const About = () => {
         initial="hidden"
         animate={isInView && "visible"}
         ref={ref}
+        transition={transition1}
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
         className="max-w-screen-xl mx-auto flex flex-col justify-center px-4 w-full h-full lg:flex-row"
       >
         <motion.div

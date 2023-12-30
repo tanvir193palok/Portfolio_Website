@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import myImage from "../assets/Polock.jpeg";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { CursorContext } from "./context/CursorContext";
+import { transition1 } from "./Transitions";
 
 const textVariants = {
   initial: {
@@ -12,7 +14,7 @@ const textVariants = {
   animate: {
     x: 0,
     opacity: 1,
-    transition: { duration: 1, staggerChildren: 0.1},
+    transition: { duration: 1, type: "linear", staggerChildren: 0.1 },
   },
 };
 
@@ -29,6 +31,7 @@ const imageVariants = {
 };
 
 const Home = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <div
       name="home"
@@ -42,6 +45,8 @@ const Home = () => {
       >
         <motion.div
           variants={textVariants}
+          onMouseEnter={mouseEnterHandler}
+          onMouseLeave={mouseLeaveHandler}
           className="flex mr-4 flex-col justify-center h-full"
         >
           <h2

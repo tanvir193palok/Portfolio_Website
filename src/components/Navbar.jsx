@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { CursorContext } from "./context/CursorContext";
 
 const Navbar = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const [nav, setNav] = useState(false);
   const links = [
     {
@@ -36,13 +38,19 @@ const Navbar = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
           >
             Palok
           </motion.span>
         </h1>
       </div>
 
-      <ul className="hidden md:flex">
+      <ul
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
+        className="hidden md:flex"
+      >
         {links.map(({ id, link }) => (
           <li
             key={id}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Project1 from "../assets/portfolio/Project-1.png";
 import Project2 from "../assets/portfolio/Project-2.png";
 import Project3 from "../assets/portfolio/Project-3.png";
@@ -10,6 +10,7 @@ import Project8 from "../assets/portfolio/Project8.jpg";
 import Project9 from "../assets/portfolio/Project9.jpg";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { CursorContext } from "./context/CursorContext";
 
 const portfolioVariants = {
   hidden: { y: 100, opacity: 0 },
@@ -19,12 +20,13 @@ const portfolioVariants = {
     transition: {
       duration: 1,
       staggerChildren: 0.1,
-      type: "tween",
+      type: "linear",
     },
   },
 };
 
 const Portfolio = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
   const isInView = useInView(ref, { triggerOnce: true });
 
@@ -96,6 +98,8 @@ const Portfolio = () => {
         variants={portfolioVariants}
         initial="hidden"
         animate={isInView && "visible"}
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
         ref={ref}
         className="max-w-screen-xl p-4 mx-auto flex flex-col justify-center w-full h-full"
       >
