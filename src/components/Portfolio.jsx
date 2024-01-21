@@ -8,6 +8,7 @@ import Project6 from "../assets/portfolio/Project-6.png";
 import Project7 from "../assets/portfolio/Project7.jpg";
 import Project8 from "../assets/portfolio/Project8.jpg";
 import Project9 from "../assets/portfolio/Project9.jpg";
+import Project10 from "../assets/portfolio/Project10.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CursorContext } from "./context/CursorContext";
@@ -63,30 +64,36 @@ const Portfolio = () => {
     },
     {
       id: 6,
+      src: Project10,
+      liveUrl: "https://recipe-app2x4.netlify.app/",
+      gitUrl: "https://github.com/tanvir193palok/Recipe_App",
+    },
+    {
+      id: 7,
       src: Project6,
       liveUrl: "https://shimmering-wisp-8a5007.netlify.app/",
       gitUrl: "https://github.com/tanvir193palok/PixelHarmony",
     },
     {
-      id: 7,
+      id: 8,
       src: Project3,
       liveUrl:
         "https://653ebc0b7cf24033aad61f55--deluxe-kitten-e4a77b.netlify.app/",
       gitUrl: "https://github.com/tanvir193palok/ThreeJS-Project",
     },
     {
-      id: 8,
+      id: 9,
       src: Project4,
       liveUrl: "https://tanvir193palok.github.io/MaterialUI-Project/",
       gitUrl: "https://github.com/tanvir193palok/MaterialUI-Project",
     },
-    {
-      id: 9,
-      src: Project5,
-      liveUrl: "https://symphonious-genie-d5fd8f.netlify.app/",
-      gitUrl:
-        "https://github.com/tanvir193palok/Summarizer/tree/main/ai_summarizer",
-    },
+    // {
+    //   id: 10,
+    //   src: Project5,
+    //   liveUrl: "https://symphonious-genie-d5fd8f.netlify.app/",
+    //   gitUrl:
+    //     "https://github.com/tanvir193palok/Summarizer/tree/main/ai_summarizer",
+    // },
   ];
 
   return (
