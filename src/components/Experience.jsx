@@ -127,13 +127,21 @@ const Experience = () => {
           variants={portfolioVariants}
           initial="hidden"
           animate={isInView && "visible"}
-          onMouseEnter={mouseEnterHandler}
-          onMouseLeave={mouseLeaveHandler}
         >
-          <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
+          <p
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline"
+          >
             Experience
           </p>
-          <p className="py-8 text-xl">Following are my tech stack with years of experience.</p>
+          <p
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className="py-8 text-xl"
+          >
+            Following are my tech stack with years of experience.
+          </p>
         </motion.div>
 
         <motion.div
@@ -152,7 +160,9 @@ const Experience = () => {
               <div
                 className={`flex items-center justify-end pr-2 md:pr-5 text-z-50 ${text}`}
               >
-                <span className="hidden md:inline text-bold text-lg">{experience} years</span>
+                <span className="hidden md:inline text-bold text-lg">
+                  {experience} years
+                </span>
                 <span className="md:hidden">{experience}</span>
               </div>
               <img src={src} alt="experience" className="w-20 mx-auto" />

@@ -28,18 +28,23 @@ const Contact = () => {
         initial="initial"
         animate={isInView && "final"}
         ref={ref}
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
         className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full"
       >
         <motion.div variants={contactVariants} className="pb-8">
           <motion.p
             variants={contactVariants}
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
             className="text-4xl  font-bold inline border-b-4 border-gray-500"
           >
             Contact
           </motion.p>
-          <motion.p variants={contactVariants} className="py-6 text-xl">
+          <motion.p
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            variants={contactVariants}
+            className="py-6 text-xl"
+          >
             Submit the form below to get in touch with me
           </motion.p>
         </motion.div>
@@ -49,6 +54,8 @@ const Contact = () => {
           className="flex justify-center items-center"
         >
           <motion.form
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
             action="https://getform.io/f/b1be36f6-5358-41f9-a47f-66dac8555815"
             method="POST"
             className="flex flex-col w-full md:w-1/2"

@@ -45,18 +45,20 @@ const Home = () => {
         >
           <motion.div
             variants={textVariants}
-            onMouseEnter={mouseEnterHandler}
-            onMouseLeave={mouseLeaveHandler}
             className="flex mr-4 flex-col justify-center h-full"
           >
             <h2
               variants={textVariants}
-              className="text-4xl tracking-tight leading-tight pt-24 font-bold text-white"
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
+              className="text-4xl tracking-tight leading-tight mt-24 font-bold text-white"
             >
               Welcome <p>I'm Tanvir Ahmed Palok</p>
             </h2>
             <p
               variants={textVariants}
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
               className="text-gray-400 text-xl leading-snug py-4 max-w-[70ch]"
             >
               A Frontend focused Web Developer building the Frontend of Websites
@@ -65,6 +67,8 @@ const Home = () => {
             </p>
             <p
               variants={textVariants}
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
               className="text-[#2E8A99] text-xl mt-2 mb-2 md:mt-4 leading-normal"
             >
               Enthusiastic Frontend Developer | javascript | React | Java |

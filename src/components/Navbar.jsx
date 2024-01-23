@@ -46,14 +46,12 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <ul
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
-        className="hidden md:flex"
-      >
+      <ul className="hidden md:flex">
         {links.map(({ id, link }) => (
           <li
             key={id}
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
             className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-125 duration-200"
           >
             <Link to={link} smooth duration={500}>

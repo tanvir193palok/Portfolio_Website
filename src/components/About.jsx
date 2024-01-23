@@ -30,13 +30,13 @@ const About = () => {
           animate={isInView && "visible"}
           ref={ref}
           transition={transition1}
-          onMouseEnter={mouseEnterHandler}
-          onMouseLeave={mouseLeaveHandler}
           className="max-w-screen-xl mx-auto flex flex-col justify-center px-4 w-full h-full lg:flex-row"
         >
           <motion.div
             variants={textVariants}
             className="flex flex-col justify-center h-full w-full"
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
           >
             <motion.div variants={textVariants}>
               <p className="text-4xl leading-tight font-bold inline border-b-4 border-gray-500">
@@ -85,6 +85,8 @@ const About = () => {
           <motion.div variants={textVariants} className="md:h-full md:w-full ">
             <motion.p
               variants={textVariants}
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
               className="text-lg max-w-[70ch] mt-4 md:mt-0 md:pl-4 text-justify leading-normal"
             >
               Currently, I am elevating my expertise in frontend development,

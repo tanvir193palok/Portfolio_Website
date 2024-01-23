@@ -105,16 +105,24 @@ const Portfolio = () => {
         variants={portfolioVariants}
         initial="hidden"
         animate={isInView && "visible"}
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
         ref={ref}
         className="max-w-screen-xl p-4 mx-auto flex flex-col justify-center w-full h-full"
       >
         <motion.div variants={portfolioVariants} className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+          <p
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className="text-4xl font-bold inline border-b-4 border-gray-500"
+          >
             Portfolio
           </p>
-          <p className="py-6 text-xl">Check out some of my work</p>
+          <p
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className="py-6 text-xl"
+          >
+            Check out some of my work
+          </p>
         </motion.div>
 
         <motion.div
@@ -134,12 +142,16 @@ const Portfolio = () => {
               />
               <div className="flex items-center justify-center">
                 <button
+                  onMouseEnter={mouseEnterHandler}
+                  onMouseLeave={mouseLeaveHandler}
                   onClick={() => (window.location.href = liveUrl)}
                   className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
                 >
                   Demo
                 </button>
                 <button
+                  onMouseEnter={mouseEnterHandler}
+                  onMouseLeave={mouseLeaveHandler}
                   onClick={() => (window.location.href = gitUrl)}
                   className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
                 >
