@@ -4,20 +4,20 @@ import { CursorContext } from "./context/CursorContext";
 
 const contactVariants = {
   initial: {
-    x: 1000,
+    y: -30,
     opacity: 0,
   },
   final: {
-    x: 0,
+    y: 0,
     opacity: 1,
-    transition: { duration: 1, staggerChildren: 0.1 },
+    transition: { duration: 1, staggerChildren: 0.25 },
   },
 };
 
 const Contact = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
-  const isInView = useInView(ref, { triggerOnce: true });
+  const isInView = useInView(ref);
   return (
     <div
       name="contact"

@@ -1,37 +1,35 @@
 import React, { createContext, useEffect, useState } from "react";
+import { debounce } from "lodash";
 
-//create context
 export const CursorContext = createContext();
 
 const CursorProvider = ({ children }) => {
-  //cursor position
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-  //cursor bg state
   const [cursorBG, setCursorBG] = useState("default");
-
   const mobileViewportIsActive = window.innerWidth < 768;
 
   useEffect(() => {
-    if (!mobileViewportIsActive) {
-      const move = (e) => {
-        setCursorPosition({
-          x: e.clientX,
-          y: e.clientY,
-        });
-      };
-      window.addEventListener("mousemove", move);
+    // Define the debounced handleMouseMove function
+    const handleMouseMove = debounce((e) => {
+      setCursorPosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    }, 16);
 
-      //remove event
+    if (!mobileViewportIsActive) {
+      // Attach the debounced event listener
+      window.addEventListener("mousemove", handleMouseMove);
+
+      // Cleanup: Remove the event listener
       return () => {
-        window.removeEventListener("mousemove", move);
+        window.removeEventListener("mousemove", handleMouseMove);
       };
     } else {
       setCursorBG("none");
     }
-  });
+  }, [mobileViewportIsActive]);
 
-  //cursor variants
   const cursorVariants = {
     default: {
       x: cursorPosition.x - 16,
@@ -53,12 +51,10 @@ const CursorProvider = ({ children }) => {
     },
   };
 
-  //mouse enter handler
   const mouseEnterHandler = () => {
     setCursorBG("text");
   };
 
-  //mouse Leave handler
   const mouseLeaveHandler = () => {
     setCursorBG("default");
   };
