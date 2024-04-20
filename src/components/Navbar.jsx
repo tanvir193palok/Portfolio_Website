@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { CursorContext } from "./context/CursorContext";
+import { CursorContext } from "../context/CursorContext";
 
 const Navbar = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);

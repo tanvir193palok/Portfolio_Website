@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import myImage from "../assets/Polock.jpeg";
+import Image from '../assets/Polock3.jpg'
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { CursorContext } from "./context/CursorContext";
+import { CursorContext } from "../context/CursorContext";
 
 const textVariants = {
   initial: {

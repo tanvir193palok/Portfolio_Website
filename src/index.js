@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 
 //import cursor context
-import CursorProvider from "./components/context/CursorContext";
+import CursorProvider from "./context/CursorContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

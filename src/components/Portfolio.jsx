@@ -11,7 +11,7 @@ import Project9 from "../assets/portfolio/Project9.jpg";
 import Project10 from "../assets/portfolio/Project10.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { CursorContext } from "./context/CursorContext";
+import { CursorContext } from "../context/CursorContext";
 
 const portfolioVariants = {
   hidden: { y: 100, opacity: 0 },

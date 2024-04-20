@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react";
 import CubeAnimation from "./CubeAnimation";
 import { motion, useInView } from "framer-motion";
-import { CursorContext } from "./context/CursorContext";
+import { CursorContext } from "../context/CursorContext";
 import { transition1 } from "./Transitions";
 
 const textVariants = {

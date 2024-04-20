@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { CursorContext } from "./context/CursorContext";
+import { CursorContext } from "../context/CursorContext";
 
 const contactVariants = {
   initial: {
