@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import myImage from "../assets/Polock.jpeg";
-import Image from '../assets/Polock3.jpg'
+import Polock from "../assets/polock.png";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
@@ -32,17 +32,18 @@ const imageVariants = {
 
 const Home = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+
   return (
     <>
       <div
         name="home"
-        className="h-full md:h-screen w-full bg-gradient-to-b from-black via-black to-gray-800"
+        className="h-full md:h-screen w-full bg-gradient-to-b from-black via-black to-gray-800 "
       >
         <motion.div
           variants={textVariants}
           initial="initial"
           animate="animate"
-          className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row"
+          className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full px-4 pt-10 md:flex-row"
         >
           <motion.div
             variants={textVariants}
@@ -52,15 +53,20 @@ const Home = () => {
               variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="text-4xl tracking-tight leading-tight mt-24 font-bold text-white"
+              className="flex flex-col tracking-tight md:mr-10 mb-4 md:mb-16 leading-tight font-bold text-white"
             >
-              Welcome <p>I'm Tanvir Ahmed Palok</p>
+              <p className="flex justify-center md:justify-start text-2xl md:text-6xl mb-2 md:mb-6">
+                Welcome
+              </p>
+              <p className="flex justify-center md:justify-start text-xl md:text-5xl">
+                I'm Tanvir Ahmed Palok
+              </p>
             </h2>
             <p
               variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="text-gray-400 text-xl leading-snug py-4 max-w-[70ch]"
+              className="text-gray-500 text-sm md:text-xl md:font-semibold text-center md:text-left leading-snug md:max-w-[70ch]"
             >
               A Frontend focused Web Developer building the Frontend of Websites
               and Web Applications that leads to the success of the overall
@@ -70,17 +76,26 @@ const Home = () => {
               variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="text-[#2E8A99] text-xl mt-2 mb-2 md:mt-4 leading-normal"
+              className="text-[#2E8A99] text-xl font-bold mb-6 mt-4 leading-normal hidden md:flex"
             >
-              Enthusiastic Frontend Developer | javascript | React | Java |
-              Python
+              Enthusiastic Frontend Developer | javascript | React.js | Next.js
+              | Java | Python
             </p>
-            <motion.div variants={textVariants}>
+            <p className="flex justify-center md:hidden text-[#2E8A99] text-sm mt-2 leading-normal">
+              Enthusiastic Frontend Developer
+            </p>
+            <p className="flex justify-center md:hidden text-[#2E8A99] text-sm mb-4 leading-normal">
+              javascript | React.js | Next.js | Java | Python
+            </p>
+            <motion.div
+              className="flex justify-center md:justify-start md:mr-10"
+              variants={textVariants}
+            >
               <Link
                 to="portfolio"
                 smooth
                 duration={500}
-                className="text-white group w-fit px-6 py-3 mb-4 md:my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to to-blue-500 cursor-pointer"
+                className="text-white group w-fit px-2 md:px-6 py-2 md:py-3 md:my-2 text-sm md:text-lg flex items-center rounded-md bg-gradient-to-r from-cyan-500 to to-blue-500 cursor-pointer"
               >
                 Portfolio
                 <span className="group-hover:rotate-90 duration-300">
@@ -91,9 +106,9 @@ const Home = () => {
           </motion.div>
           <motion.div variants={imageVariants}>
             <img
-              src={myImage}
+              src={Polock}
               alt="Profile Pic"
-              className="rounded-2xl mx-auto w-2/3 mt-10 md:mt-0 md:w-[50%]"
+              className="rounded-md md:rounded-2xl mx-auto w-full md:h-[600px] h-[300px] mt-8 md:mt-0 mb-4"
             />
           </motion.div>
         </motion.div>

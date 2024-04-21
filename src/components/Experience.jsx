@@ -47,19 +47,24 @@ const Experience = () => {
           initial="hidden"
           animate={isInView && "visible"}
         >
-          <p
-            onMouseEnter={mouseEnterHandler}
-            onMouseLeave={mouseLeaveHandler}
-            className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline"
-          >
-            Experience
-          </p>
+          <div className="flex justify-center">
+            <p
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
+              className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline"
+            >
+              Experience
+            </p>
+          </div>
           <p
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
             className="py-8 text-xl"
           >
-            Following are my tech stack with years of experience.
+            As a fresher, I do not possess any prior experience of working in
+            any Software Company rather I have gained a research experience of
+            almost 1.5 years in the field of Data Science, conducting a team of 5
+            members as a first author.
           </p>
         </div>
         <ThesisDoc />
