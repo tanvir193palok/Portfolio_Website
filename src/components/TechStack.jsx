@@ -121,7 +121,7 @@ const TechStack = () => {
   return (
     <div
       name="skills"
-      className="bg-gradient-to-b from-gray-800 to-black w-full h-full pt-20 md:pt-40"
+      className="bg-gradient-to-b from-black to-gray-800 w-full h-full pt-20 md:pt-40"
     >
       <div className="max-w-screen-xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
         <div className="max-w-screen-xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
@@ -144,7 +144,7 @@ const TechStack = () => {
               onMouseLeave={mouseLeaveHandler}
               className="py-4 md:py-8 text-sm md:text-lg"
             >
-              
+
             </p>
           </div>
         </div>

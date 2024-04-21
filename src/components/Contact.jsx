@@ -21,7 +21,7 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full h-full pt-24 md:h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
+      className="w-full h-full pt-24 md:h-screen bg-gradient-to-b from-gray-800 to-black p-4 text-white"
     >
       <motion.div
         variants={contactVariants}
