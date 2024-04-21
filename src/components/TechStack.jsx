@@ -7,10 +7,12 @@ import tensorflow from "../assets/tf.png";
 import github from "../assets/github.png";
 import tailwind from "../assets/tailwind.png";
 import python from "../assets/python.png";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { CursorContext } from "../context/CursorContext";
 
-const TechStack = ({ variants }) => {
+const TechStack = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
   const isInView = useInView(ref, { triggerOnce: true });
 
@@ -89,33 +91,91 @@ const TechStack = ({ variants }) => {
     },
   ];
 
+  const variants = {
+    initial: { opacity: 0, scale: 0.2 },
+    final: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+        type: "spring",
+        stiffness: 120,
+      },
+    },
+  };
+
+  const portfolioVariants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+        type: "tween",
+      },
+    },
+  };
+
   return (
-    <motion.div
-      variants={variants}
-      initial="initial"
-      animate={isInView && "final"}
-      ref={ref}
-      className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 sm:px-0"
+    <div
+      name="skills"
+      className="bg-gradient-to-b from-gray-800 to-black w-full h-full pt-20 md:pt-40"
     >
-      {techs.map(({ id, src, title, style, text, experience }) => (
+      <div className="max-w-screen-xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+        <div className="max-w-screen-xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+          <div
+            variants={portfolioVariants}
+            initial="hidden"
+            animate={isInView && "visible"}
+          >
+            <div className="flex justify-center">
+              <p
+                onMouseEnter={mouseEnterHandler}
+                onMouseLeave={mouseLeaveHandler}
+                className="text-2xl md:text-4xl font-bold border-b-4 border-gray-500 p-2 inline"
+              >
+                Skills
+              </p>
+            </div>
+            <p
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
+              className="py-4 md:py-8 text-sm md:text-lg"
+            >
+              
+            </p>
+          </div>
+        </div>
         <motion.div
           variants={variants}
-          key={id}
-          className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+          initial="initial"
+          animate={isInView && "final"}
+          ref={ref}
+          className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 sm:px-0"
         >
-          <div
-            className={`flex items-center justify-end pr-2 md:pr-5 text-z-50 ${text}`}
-          >
-            <span className="hidden md:inline text-bold text-lg">
-              {experience} years
-            </span>
-            <span className="md:hidden">{experience}</span>
-          </div>
-          <img src={src} alt="experience" className="w-20 mx-auto" />
-          <p className="mt-4">{title}</p>
+          {techs.map(({ id, src, title, style, text, experience }) => (
+            <motion.div
+              variants={variants}
+              key={id}
+              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+            >
+              <div
+                className={`flex items-center justify-end pr-2 md:pr-5 text-z-50 ${text}`}
+              >
+                <span className="hidden md:inline text-bold text-lg">
+                  {experience} years
+                </span>
+                <span className="md:hidden">{experience}</span>
+              </div>
+              <img src={src} alt="experience" className="w-20 mx-auto" />
+              <p className="mt-4">{title}</p>
+            </motion.div>
+          ))}
         </motion.div>
-      ))}
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

@@ -1,22 +1,8 @@
 import React, { useContext, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CursorContext } from "../context/CursorContext";
-import TechStack from "./TechStack";
 import ThesisDoc from "./ThesisDoc";
 
-const variants = {
-  initial: { opacity: 0, scale: 0.2 },
-  final: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.1,
-      type: "spring",
-      stiffness: 120,
-    },
-  },
-};
 
 const portfolioVariants = {
   hidden: { y: 100, opacity: 0 },
@@ -68,8 +54,6 @@ const Experience = () => {
           </p>
         </div>
         <ThesisDoc />
-
-        <TechStack variants={variants} />
       </div>
     </div>
   );

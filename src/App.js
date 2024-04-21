@@ -10,10 +10,11 @@ import { motion } from "framer-motion";
 
 //import cursor context
 import { CursorContext } from "./context/CursorContext";
+import TechStack from "./components/TechStack";
 
 const App = () => {
-  const { cursorVariants, cursorBG } =
-    useContext(CursorContext);
+  const { cursorVariants, cursorBG } = useContext(CursorContext);
+  
   return (
     <div>
       <Navbar />
@@ -21,6 +22,7 @@ const App = () => {
       <About />
       <Portfolio />
       <Experience />
+      <TechStack />
       <Contact />
       <SocialLinks />
 
