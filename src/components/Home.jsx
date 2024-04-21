@@ -66,7 +66,7 @@ const Home = () => {
               variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="text-gray-500 text-sm md:text-xl md:font-semibold text-center md:text-left leading-snug md:max-w-[70ch]"
+              className="text-gray-500 text-sm md:text-xl font-medium md:font-semibold text-center md:text-left leading-snug md:max-w-[70ch]"
             >
               A Frontend focused Web Developer building the Frontend of Websites
               and Web Applications that leads to the success of the overall

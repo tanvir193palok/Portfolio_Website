@@ -51,7 +51,7 @@ const Experience = () => {
             <p
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline"
+              className="text-2xl md:text-4xl font-bold border-b-4 border-gray-500 p-2 inline"
             >
               Experience
             </p>
@@ -59,7 +59,7 @@ const Experience = () => {
           <p
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
-            className="py-8 text-xl"
+            className="py-4 md:py-8 text-sm md:text-lg"
           >
             As a fresher, I do not possess any prior experience of working in
             any Software Company rather I have gained a research experience of

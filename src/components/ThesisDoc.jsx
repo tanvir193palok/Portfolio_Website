@@ -3,16 +3,20 @@ import ThesisCover from "../assets/thesis.jpg";
 const ThesisDoc = () => {
   return (
     <>
-      <div className="flex justify-center pb-6">
-        <p className="text-3xl font-bold">
-          <p className="flex justify-center text-4xl leading-tight">Undergraduate Thesis</p>
+      <div className="font-semibold md:font-bold">
+        <p className="flex justify-center text-xl md:text-3xl leading-tight">
+          Undergraduate Thesis
+        </p>
+        <p className="text-center text-lg md:text-2xl">
           Medical Image Reader powered by Artificial Intelligence
         </p>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center w-full h-auto py-10 -space-x-20 leading-normal">
-        <div className="w-2/3 pt-10 z-10 font-md text-lg max-w-[70ch]">
-          <p className="pt-10">
-            <span className="font-bold">Abstract: </span>
+      <div className="flex flex-col md:flex-row justify-center w-full h-auto md:py-10 md:-space-x-20 leading-normal">
+        <div className="md:w-2/3 pt-10 z-10 font-md text-lg max-w-[70ch]">
+          <p className="md:pt-10 text-sm md:text-lg">
+            <span className="font-semibold md:font-bold text-md md:text-xl">
+              Abstract:{" "}
+            </span>
             Misdiagnosis in medical imaging is a critical concern, risking
             patients’ health due to the pivotal role of radiologists’ accuracy
             in diagnostics. Current cross-checking methods for radiologists’
@@ -40,19 +44,21 @@ const ThesisDoc = () => {
             ensemble techniques offer substantial accuracy improvements,
             promising more accurate and reliable medical diagnoses.
           </p>
-          <p className="pt-10">
-            <span className="font-bold">Keywords:</span> Misdiagnosis, Deep
-            learning, Ensemble learning, Confusion matrices, Selective
-            class-wise voting, Histogram equalization, Adaptive histogram
-            equalization, Contrast limited adaptive histogram equalization,
-            Transfer learning.
+          <p className="pt-4 md:pt-10 text-sm md:text-lg">
+            <span className="font-semibold md:font-bold text-md md:text-xl">
+              Keywords:
+            </span>{" "}
+            Misdiagnosis, Deep learning, Ensemble learning, Confusion matrices,
+            Selective class-wise voting, Histogram equalization, Adaptive
+            histogram equalization, Contrast limited adaptive histogram
+            equalization, Transfer learning.
           </p>
         </div>
-        <div className="w-1/2 opacity-[0.6]">
+        <div className="md:w-1/2 md:opacity-[0.6] pt-4">
           <img
             src={ThesisCover}
             alt=""
-            className="w-full h-[800px] rounded-3xl"
+            className="w-full h-[400px] md:h-[800px] rounded-3xl"
           />
         </div>
       </div>

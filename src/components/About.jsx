@@ -30,7 +30,7 @@ const About = () => {
           animate={isInView && "visible"}
           ref={ref}
           transition={transition1}
-          className="max-w-screen-xl mx-auto flex flex-col justify-center px-4 w-full h-full lg:flex-row"
+          className="max-w-screen-xl mx-auto flex flex-col justify-center p-4 w-full h-full lg:flex-row"
         >
           <motion.div
             variants={textVariants}
@@ -38,14 +38,14 @@ const About = () => {
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
           >
-            <motion.div variants={textVariants}>
-              <p className="text-4xl leading-tight font-bold inline border-b-4 border-gray-500">
+            <motion.div className="flex justify-center " variants={textVariants}>
+              <p className="text-2xl md:text-4xl leading-tight font-bold border-b-4 border-gray-500">
                 About
               </p>
             </motion.div>
             <motion.p
               variants={textVariants}
-              className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-8"
+              className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4 mt-8"
             >
               Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate
               with a Bachelor of Science in Computer Science from BRAC
@@ -54,7 +54,7 @@ const About = () => {
             </motion.p>
             <motion.p
               variants={textVariants}
-              className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
+              className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
             >
               My programming foundation began with core Java, where I honed my
               problem-solving skills for data structures and algorithms. As
@@ -68,7 +68,7 @@ const About = () => {
             </motion.p>
             <motion.p
               variants={textVariants}
-              className="text-lg text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
+              className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
             >
               In the realm of Software Engineering, I ventured into React,
               broadening my expertise. Simultaneously, my academic exploration
@@ -87,7 +87,7 @@ const About = () => {
               variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="text-lg max-w-[70ch] mt-4 md:mt-0 md:pl-4 text-justify leading-normal"
+              className="text-sm md:text-lg max-w-[70ch] mt-4 md:mt-0 md:pl-4 text-center md:text-justify leading-normal"
             >
               Currently, I am elevating my expertise in frontend development,
               mastering React, Tailwind CSS, and exploring exciting tools like
@@ -102,7 +102,7 @@ const About = () => {
               opportunity, I am eager to contribute and grow in a dynamic work
               environment.
             </motion.p>
-            <div className="h-[600px] md:w-full">
+            <div className="h-[400px] md:h-[600px] md:w-full">
               <CubeAnimation />
             </div>
           </motion.div>

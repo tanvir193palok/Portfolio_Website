@@ -106,28 +106,31 @@ const Portfolio = () => {
         initial="hidden"
         animate={isInView && "visible"}
         ref={ref}
-        className="max-w-screen-xl p-4 mx-auto flex flex-col justify-center w-full h-full"
+        className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full p-4"
       >
-        <motion.div variants={portfolioVariants} className="pb-8">
+        <motion.div
+          variants={portfolioVariants}
+          className="flex justify-center md:pb-8"
+        >
           <p
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
-            className="text-4xl font-bold inline border-b-4 border-gray-500"
+            className="text-2xl md:text-4xl font-bold border-b-4 border-gray-500"
           >
             Portfolio
           </p>
-          <p
-            onMouseEnter={mouseEnterHandler}
-            onMouseLeave={mouseLeaveHandler}
-            className="py-6 text-xl"
-          >
-            Check out some of my work
-          </p>
         </motion.div>
+        <p
+          onMouseEnter={mouseEnterHandler}
+          onMouseLeave={mouseLeaveHandler}
+          className="py-6 text-sm md:text-lg"
+        >
+          Check out some of my work.
+        </p>
 
         <motion.div
           variants={portfolioVariants}
-          className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0"
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:px-12 sm:px-0"
         >
           {portfolios.map(({ id, src, liveUrl, gitUrl }) => (
             <motion.div
