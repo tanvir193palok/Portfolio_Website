@@ -99,14 +99,14 @@ const Portfolio = () => {
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-black to-gray-800 w-full text-white md:pt-60"
+      className="bg-gradient-to-b from-black to-gray-800 w-full text-white py-10 md:py-20 px-4 md:px-0"
     >
       <motion.div
         variants={portfolioVariants}
         initial="hidden"
         animate={isInView && "visible"}
         ref={ref}
-        className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full p-4"
+        className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full md:pt-40"
       >
         <motion.div
           variants={portfolioVariants}

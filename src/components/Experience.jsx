@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { CursorContext } from "../context/CursorContext";
 import ThesisDoc from "./ThesisDoc";
 
-
 const portfolioVariants = {
   hidden: { y: 100, opacity: 0 },
   visible: {
@@ -25,9 +24,9 @@ const Experience = () => {
   return (
     <div
       name="experience"
-      className="bg-gradient-to-b from-gray-800 to-black w-full h-full pt-20 md:pt-40"
+      className="bg-gradient-to-b from-gray-800 to-black w-full h-full py-10 md:py-20 px-4 md:px-0"
     >
-      <div className="max-w-screen-xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+      <div className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full text-white">
         <div
           variants={portfolioVariants}
           initial="hidden"
@@ -49,8 +48,8 @@ const Experience = () => {
           >
             As a fresher, I do not possess any prior experience of working in
             any Software Company rather I have gained a research experience of
-            almost 1.5 years in the field of Data Science, conducting a team of 5
-            members as a first author.
+            almost 1.5 years in the field of Data Science, conducting a team of
+            5 members as a first author.
           </p>
         </div>
         <ThesisDoc />

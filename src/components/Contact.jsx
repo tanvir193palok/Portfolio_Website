@@ -21,14 +21,14 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full h-full pt-24 md:h-screen bg-gradient-to-b from-gray-800 to-black p-4 text-white"
+      className="w-full h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white py-10 md:py-20 px-4 md:px-0"
     >
       <motion.div
         variants={contactVariants}
         initial="initial"
         animate={isInView && "final"}
         ref={ref}
-        className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full"
+        className="flex flex-col justify-center max-w-screen-lg mx-auto h-full"
       >
         <motion.div variants={contactVariants} className="flex justify-center">
           <motion.p
@@ -44,7 +44,7 @@ const Contact = () => {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
           variants={contactVariants}
-          className="py-4 md:py-8 text-sm md:text-lg"
+          className="md:flex md:justify-center py-4 md:py-8 text-sm md:text-lg"
         >
           Submit the form below to get in touch with me
         </motion.p>

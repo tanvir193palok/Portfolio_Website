@@ -22,7 +22,7 @@ const About = () => {
     <>
       <div
         name="about"
-        className="w-full pt-20 md:pt-60 pb-10 md:pb-64 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
+        className="w-full py-10 md:py-20 px-4 md:px-0 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
       >
         <div>
           <motion.div
@@ -39,7 +39,7 @@ const About = () => {
             animate={isInView && "visible"}
             ref={ref}
             transition={transition1}
-            className="max-w-screen-xl mx-auto flex flex-col justify-center p-4 w-full h-full lg:flex-row"
+            className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full lg:flex-row"
           >
             <motion.div
               variants={textVariants}

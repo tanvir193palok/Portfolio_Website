@@ -37,13 +37,13 @@ const Home = () => {
     <>
       <div
         name="home"
-        className="h-full md:h-screen w-full bg-gradient-to-b from-black via-black to-gray-800 "
+        className="h-full md:h-screen w-full bg-gradient-to-b from-black via-black to-gray-800 py-10 md:py-20 px-4 md:px-0"
       >
         <motion.div
           variants={textVariants}
           initial="initial"
           animate="animate"
-          className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full px-4 py-4 md:py-10 md:flex-row"
+          className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full md:flex-row"
         >
           <motion.div
             variants={textVariants}
@@ -108,7 +108,7 @@ const Home = () => {
             <img
               src={Polock}
               alt="Profile Pic"
-              className="rounded-md md:rounded-2xl mx-auto w-full md:h-[600px] h-[300px] mt-8 md:mt-0 mb-4"
+              className="rounded-md md:rounded-2xl mx-auto w-full md:h-[550px] h-[300px] mt-8 md:mt-0 mb-4"
             />
           </motion.div>
         </motion.div>

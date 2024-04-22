@@ -121,10 +121,10 @@ const TechStack = () => {
   return (
     <div
       name="skills"
-      className="bg-gradient-to-b from-black to-gray-800 w-full h-full pt-20 md:pt-40"
+      className="bg-gradient-to-b from-black to-gray-800 w-full h-full py-10 md:py-20 px-4 md:px-0"
     >
-      <div className="max-w-screen-xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
-        <div className="max-w-screen-xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+      <div className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full text-white">
+        <div className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full text-white">
           <div
             variants={portfolioVariants}
             initial="hidden"
