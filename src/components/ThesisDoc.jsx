@@ -1,18 +1,62 @@
+import { useContext, useRef } from "react";
 import ThesisCover from "../assets/thesis.jpg";
+import { motion, useInView } from "framer-motion";
+import { CursorContext } from "../context/CursorContext";
+
+const textVariants = {
+  initial: {
+    y: -50,
+
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+
+    opacity: 1,
+    transition: { duration: 1, type: "linear", staggerChildren: 0.2 },
+  },
+};
+
+const imageVariants = {
+  initial: {
+    x: -50,
+    opacity: 1,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 2 },
+  },
+};
 
 const ThesisDoc = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+
   return (
     <>
-      <div className="font-semibold md:font-bold">
+      <motion.div
+        variants={textVariants}
+        initial="initial"
+        animate="animate"
+        className="font-semibold md:font-bold"
+      >
         <p className="flex justify-center text-xl md:text-3xl leading-tight">
           Undergraduate Thesis
         </p>
-        <p className="text-center text-lg md:text-2xl">
+        <motion.p
+          variants={textVariants}
+          className="text-center text-lg md:text-2xl"
+        >
           Medical Image Reader powered by Artificial Intelligence
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
       <div className="flex flex-col md:flex-row justify-center w-full h-auto md:py-10 md:-space-x-20 leading-normal">
-        <div className="md:w-2/3 pt-10 z-10 font-md text-lg max-w-[70ch]">
+        <motion.div
+          variants={textVariants}
+          initial="initial"
+          animate="animate"
+          className="md:w-2/3 pt-10 z-10 font-md text-lg max-w-[70ch]"
+        >
           <p className="md:pt-10 text-sm md:text-lg">
             <span className="font-semibold md:font-bold text-md md:text-xl">
               Abstract:{" "}
@@ -44,7 +88,10 @@ const ThesisDoc = () => {
             ensemble techniques offer substantial accuracy improvements,
             promising more accurate and reliable medical diagnoses.
           </p>
-          <p className="pt-4 md:pt-10 text-sm md:text-lg">
+          <motion.p
+            variants={textVariants}
+            className="pt-4 md:pt-10 text-sm md:text-lg"
+          >
             <span className="font-semibold md:font-bold text-md md:text-xl">
               Keywords:
             </span>{" "}
@@ -52,15 +99,20 @@ const ThesisDoc = () => {
             Selective class-wise voting, Histogram equalization, Adaptive
             histogram equalization, Contrast limited adaptive histogram
             equalization, Transfer learning.
-          </p>
-        </div>
-        <div className="md:w-1/2 md:opacity-[0.6] pt-4">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          variants={imageVariants}
+          initial="initial"
+          animate="animate"
+          className="md:w-1/2 md:opacity-[0.6] pt-4"
+        >
           <img
             src={ThesisCover}
             alt=""
             className="w-full h-[400px] md:h-[800px] rounded-3xl"
           />
-        </div>
+        </motion.div>
       </div>
     </>
   );

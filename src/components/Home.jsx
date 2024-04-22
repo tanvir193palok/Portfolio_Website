@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import myImage from "../assets/Polock.jpeg";
 import Polock from "../assets/polock.png";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
@@ -8,25 +7,25 @@ import { CursorContext } from "../context/CursorContext";
 
 const textVariants = {
   initial: {
-    x: -500,
+    y: -50,
     opacity: 0,
   },
   animate: {
-    x: 0,
+    y: 0,
     opacity: 1,
-    transition: { duration: 1, type: "linear", staggerChildren: 0.1 },
+    transition: { duration: 2, type: "linear", staggerChildren: 0.1 },
   },
 };
 
 const imageVariants = {
   initial: {
-    x: 1000,
-    opacity: 0,
+    x: -50,
+    opacity: 1,
   },
   animate: {
     x: 0,
     opacity: 1,
-    transition: { duration: 1 },
+    transition: { duration: 2 },
   },
 };
 
@@ -39,18 +38,14 @@ const Home = () => {
         name="home"
         className="h-full md:h-screen w-full bg-gradient-to-b from-black via-black to-gray-800 py-10 md:py-20 px-4 md:px-0"
       >
-        <motion.div
-          variants={textVariants}
-          initial="initial"
-          animate="animate"
-          className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full md:flex-row"
-        >
+        <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full md:flex-row">
           <motion.div
             variants={textVariants}
+            initial="initial"
+            animate="animate"
             className="flex mr-4 flex-col justify-center h-full"
           >
             <h2
-              variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
               className="flex flex-col tracking-tight md:mr-10 mb-4 md:mb-16 leading-tight font-bold text-white"
@@ -63,7 +58,6 @@ const Home = () => {
               </p>
             </h2>
             <p
-              variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
               className="text-gray-500 text-sm md:text-xl font-medium md:font-semibold text-center md:text-left leading-snug md:max-w-[70ch]"
@@ -73,7 +67,6 @@ const Home = () => {
               product.
             </p>
             <p
-              variants={textVariants}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
               className="text-[#2E8A99] text-xl font-bold mb-6 mt-4 leading-normal hidden md:flex"
@@ -104,14 +97,18 @@ const Home = () => {
               </Link>
             </motion.div>
           </motion.div>
-          <motion.div variants={imageVariants}>
+          <motion.div
+            variants={imageVariants}
+            initial="initial"
+            animate="animate"
+          >
             <img
               src={Polock}
               alt="Profile Pic"
               className="rounded-md md:rounded-2xl mx-auto w-full md:h-[550px] h-[300px] mt-8 md:mt-0 mb-4"
             />
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </>
   );

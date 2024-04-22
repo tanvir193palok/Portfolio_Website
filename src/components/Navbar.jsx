@@ -33,20 +33,34 @@ const Navbar = () => {
     },
   ];
 
+  const textVariants = {
+    initial: {
+      y: -200,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 5, type: "spring", staggerChildren: 0.1 },
+    },
+  };
+
   return (
     <>
-      <div className="justify-between px-4 items-center w-full h-20 text-white bg-black fixed z-50 hidden md:flex">
+      <motion.div
+        variants={textVariants}
+        initial="initial"
+        animate="animate"
+        className="justify-between px-4 items-center w-full h-20 text-white bg-black fixed z-50 hidden md:flex"
+      >
         <div>
           <h1 className="hidden md:flex text-5xl font-signature ml-2">
-            <motion.span
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
+            <span
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
             >
               Palok
-            </motion.span>
+            </span>
           </h1>
         </div>
 
@@ -64,7 +78,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </motion.div>
       <BurgerMenu links={links} />
     </>
   );

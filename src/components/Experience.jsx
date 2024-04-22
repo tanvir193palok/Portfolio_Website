@@ -3,15 +3,15 @@ import { motion, useInView } from "framer-motion";
 import { CursorContext } from "../context/CursorContext";
 import ThesisDoc from "./ThesisDoc";
 
-const portfolioVariants = {
-  hidden: { y: 100, opacity: 0 },
+const experienceVariants = {
+  hidden: { y: -50, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
       duration: 1,
-      staggerChildren: 0.1,
-      type: "tween",
+      staggerChildren: 0.2,
+      type: "linear",
     },
   },
 };
@@ -27,10 +27,11 @@ const Experience = () => {
       className="bg-gradient-to-b from-gray-800 to-black w-full h-full py-10 md:py-20 px-4 md:px-0"
     >
       <div className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full text-white">
-        <div
-          variants={portfolioVariants}
+        <motion.div
+          variants={experienceVariants}
           initial="hidden"
           animate={isInView && "visible"}
+          ref={ref}
         >
           <div className="flex justify-center">
             <p
@@ -41,7 +42,8 @@ const Experience = () => {
               Experience
             </p>
           </div>
-          <p
+          <motion.p
+            variants={experienceVariants}
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
             className="py-4 md:py-8 text-sm md:text-lg"
@@ -50,8 +52,8 @@ const Experience = () => {
             any Software Company rather I have gained a research experience of
             almost 1.5 years in the field of Data Science, conducting a team of
             5 members as a first author.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <ThesisDoc />
       </div>
     </div>

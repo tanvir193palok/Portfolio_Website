@@ -14,15 +14,28 @@ import { useRef } from "react";
 import { CursorContext } from "../context/CursorContext";
 
 const portfolioVariants = {
-  hidden: { y: 100, opacity: 0 },
+  hidden: { x: -50, y: -50, opacity: 0 },
   visible: {
+    x: 0,
     y: 0,
     opacity: 1,
     transition: {
       duration: 1,
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
       type: "linear",
     },
+  },
+};
+
+const textVariants = {
+  initial: {
+    y: -50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 2, type: "linear", staggerChildren: 0.1 },
   },
 };
 

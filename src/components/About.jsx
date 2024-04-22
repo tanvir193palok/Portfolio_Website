@@ -2,14 +2,13 @@ import React, { useContext, useRef } from "react";
 import CubeAnimation from "./CubeAnimation";
 import { motion, useInView } from "framer-motion";
 import { CursorContext } from "../context/CursorContext";
-import { transition1 } from "./Transitions";
 
 const textVariants = {
-  hidden: { y: 100, opacity: 0 },
+  hidden: { y: -50, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 1, type: "linear", staggerChildren: 0.2 },
+    transition: { duration: 2, type: "linear", staggerChildren: 0.3 },
   },
 };
 
@@ -24,38 +23,33 @@ const About = () => {
         name="about"
         className="w-full py-10 md:py-20 px-4 md:px-0 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
       >
-        <div>
-          <motion.div
-            className="flex justify-center"
-            variants={textVariants}
-          >
-            <p className="text-2xl md:text-4xl leading-tight font-bold border-b-4 border-gray-500">
+        <motion.div
+          variants={textVariants}
+          initial="hidden"
+          animate={isInView && "visible"}
+          ref={ref}
+        >
+          <div className="flex justify-center">
+            <p
+              className="text-2xl md:text-4xl leading-tight font-bold border-b-4 border-gray-500"
+            >
               About
             </p>
-          </motion.div>
-          <motion.div
-            variants={textVariants}
-            initial="hidden"
-            animate={isInView && "visible"}
-            ref={ref}
-            transition={transition1}
+          </div>
+          <div
             className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full lg:flex-row"
           >
-            <motion.div
-              variants={textVariants}
+            <div
               className="flex flex-col justify-center h-full w-full py-4 md:py-6"
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
             >
-              <motion.p
-                variants={textVariants}
-                className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4"
-              >
+              <p className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4">
                 Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate
                 with a Bachelor of Science in Computer Science from BRAC
                 University. Throughout my academic journey, I have acquired
                 knowledge in various technologies and principles.
-              </motion.p>
+              </p>
               <motion.p
                 variants={textVariants}
                 className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
@@ -85,13 +79,12 @@ const About = () => {
                 growth.
                 <br />
               </motion.p>
-            </motion.div>
+            </div>
             <motion.div
               variants={textVariants}
               className="md:h-full md:w-full py-4 md:py-6"
             >
-              <motion.p
-                variants={textVariants}
+              <p
                 onMouseEnter={mouseEnterHandler}
                 onMouseLeave={mouseLeaveHandler}
                 className="text-sm md:text-lg max-w-[70ch] mt-4 md:mt-0 md:pl-4 text-center md:text-justify leading-normal"
@@ -108,13 +101,13 @@ const About = () => {
                 enthusiastic about the prospect of showcasing my skills in these
                 fields. Given the opportunity, I am eager to contribute and grow
                 in a dynamic work environment.
-              </motion.p>
+              </p>
               <div className="h-[400px] md:h-[600px] md:w-full">
                 <CubeAnimation />
               </div>
             </motion.div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </>
   );
