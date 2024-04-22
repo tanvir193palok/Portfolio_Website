@@ -43,7 +43,7 @@ const Home = () => {
           variants={textVariants}
           initial="initial"
           animate="animate"
-          className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full px-4 pt-10 md:flex-row"
+          className="max-w-screen-xl mx-auto flex flex-col items-center justify-center h-full px-4 py-4 md:py-10 md:flex-row"
         >
           <motion.div
             variants={textVariants}

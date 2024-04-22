@@ -123,14 +123,14 @@ const Portfolio = () => {
         <p
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
-          className="py-6 text-sm md:text-lg"
+          className="py-4 md:py-6 text-sm md:text-lg"
         >
           Check out some of my work.
         </p>
 
         <motion.div
           variants={portfolioVariants}
-          className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:px-12 sm:px-0"
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 pt-4 md:pt-6 sm:px-0"
         >
           {portfolios.map(({ id, src, liveUrl, gitUrl }) => (
             <motion.div

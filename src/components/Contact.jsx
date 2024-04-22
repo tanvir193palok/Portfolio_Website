@@ -30,24 +30,24 @@ const Contact = () => {
         ref={ref}
         className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full"
       >
-        <motion.div variants={contactVariants} className="pb-8">
+        <motion.div variants={contactVariants} className="flex justify-center">
           <motion.p
             variants={contactVariants}
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
-            className="text-4xl  font-bold inline border-b-4 border-gray-500"
+            className="text-2xl md:text-4xl font-bold border-b-4 border-gray-500"
           >
             Contact
           </motion.p>
-          <motion.p
-            onMouseEnter={mouseEnterHandler}
-            onMouseLeave={mouseLeaveHandler}
-            variants={contactVariants}
-            className="py-6 text-xl"
-          >
-            Submit the form below to get in touch with me
-          </motion.p>
         </motion.div>
+        <motion.p
+          onMouseEnter={mouseEnterHandler}
+          onMouseLeave={mouseLeaveHandler}
+          variants={contactVariants}
+          className="py-4 md:py-8 text-sm md:text-lg"
+        >
+          Submit the form below to get in touch with me
+        </motion.p>
 
         <motion.div
           variants={contactVariants}
