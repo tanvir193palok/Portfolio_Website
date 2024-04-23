@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import ThesisCover from "../assets/thesis.jpg";
 import { motion, useInView } from "framer-motion";
 import { CursorContext } from "../context/CursorContext";
+import { transition1 } from "./Transitions";
 
 const textVariants = {
   initial: {
@@ -17,18 +18,6 @@ const textVariants = {
   },
 };
 
-const imageVariants = {
-  initial: {
-    x: -50,
-    opacity: 1,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 2 },
-  },
-};
-
 const ThesisDoc = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
@@ -41,6 +30,8 @@ const ThesisDoc = () => {
         initial="initial"
         animate={isInView && "animate"}
         ref={ref}
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
         className="font-semibold md:font-bold"
       >
         <p className="flex justify-center text-xl md:text-3xl leading-tight">
@@ -106,16 +97,18 @@ const ThesisDoc = () => {
           </motion.p>
         </motion.div>
         <motion.div
-          variants={imageVariants}
-          initial="initial"
-          animate={isInView && "animate"}
+          initial={{ scale: 0 }}
+          animate={isInView && { scale: 1 }}
           ref={ref}
-          className="md:w-1/2 md:opacity-[0.6] pt-4"
+          transition={transition1}
+          className="flex justify-center md:w-1/2 md:opacity-[0.6] pt-4"
         >
-          <img
+          <motion.img
+            whileHover={{ scale: 1.1 }}
+            transition={transition1}
             src={ThesisCover}
             alt=""
-            className="w-full h-[400px] md:h-[800px] rounded-3xl"
+            className="w-[80%] md:w-full h-[350px] md:h-[800px] rounded-3xl"
           />
         </motion.div>
       </div>
