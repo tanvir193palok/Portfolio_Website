@@ -31,13 +31,16 @@ const imageVariants = {
 
 const ThesisDoc = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  const ref = useRef();
+  const isInView = useInView(ref, { triggerOnce: true });
 
   return (
     <>
       <motion.div
         variants={textVariants}
         initial="initial"
-        animate="animate"
+        animate={isInView && "animate"}
+        ref={ref}
         className="font-semibold md:font-bold"
       >
         <p className="flex justify-center text-xl md:text-3xl leading-tight">
@@ -54,7 +57,8 @@ const ThesisDoc = () => {
         <motion.div
           variants={textVariants}
           initial="initial"
-          animate="animate"
+          animate={isInView && "animate"}
+          ref={ref}
           className="md:w-2/3 pt-10 z-10 font-md text-lg max-w-[70ch]"
         >
           <p className="md:pt-10 text-sm md:text-lg">
@@ -104,7 +108,8 @@ const ThesisDoc = () => {
         <motion.div
           variants={imageVariants}
           initial="initial"
-          animate="animate"
+          animate={isInView && "animate"}
+          ref={ref}
           className="md:w-1/2 md:opacity-[0.6] pt-4"
         >
           <img

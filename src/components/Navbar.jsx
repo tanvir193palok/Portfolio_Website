@@ -41,7 +41,7 @@ const Navbar = () => {
     animate: {
       y: 0,
       opacity: 1,
-      transition: { duration: 5, type: "spring", staggerChildren: 0.1 },
+      transition: { duration: 2, type: "linear", staggerChildren: 0.1 },
     },
   };
 
@@ -51,7 +51,7 @@ const Navbar = () => {
         variants={textVariants}
         initial="initial"
         animate="animate"
-        className="justify-between px-4 items-center w-full h-20 text-white bg-black fixed z-50 hidden md:flex"
+        className="justify-between px-4 items-center w-full h-20 text-white fixed z-50 hidden md:flex bg-black bg-opacity-50 backdrop-filter backdrop-blur-md"
       >
         <div>
           <h1 className="hidden md:flex text-5xl font-signature ml-2">
@@ -70,7 +70,7 @@ const Navbar = () => {
               key={id}
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-125 duration-200"
+              className="px-4 cursor-pointer capitalize font-medium text-gray-3gi00 hover:scale-125 duration-200"
             >
               <Link to={link} smooth duration={500}>
                 {link}
