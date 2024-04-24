@@ -7,12 +7,10 @@ import { transition1 } from "./Transitions";
 const textVariants = {
   initial: {
     y: -50,
-
     opacity: 0,
   },
   animate: {
     y: 0,
-
     opacity: 1,
     transition: { duration: 1, type: "linear", staggerChildren: 0.2 },
   },
