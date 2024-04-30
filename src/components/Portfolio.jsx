@@ -12,20 +12,7 @@ import Project10 from "../assets/portfolio/Project10.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CursorContext } from "../context/CursorContext";
-
-const portfolioVariants = {
-  hidden: { x: -50, y: -50, opacity: 0 },
-  visible: {
-    x: 0,
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.3,
-      type: "linear",
-    },
-  },
-};
+import ProjectCard from "./ProjectCard";
 
 const textVariants = {
   initial: {
@@ -115,14 +102,14 @@ const Portfolio = () => {
       className="bg-gradient-to-b from-black to-gray-800 w-full text-white py-10 md:py-20 px-4 md:px-0"
     >
       <motion.div
-        variants={portfolioVariants}
-        initial="hidden"
-        animate={isInView && "visible"}
+        variants={textVariants}
+        initial="initial"
+        animate={isInView && "animate"}
         ref={ref}
         className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full md:pt-40"
       >
         <motion.div
-          variants={portfolioVariants}
+          variants={textVariants}
           className="flex justify-center md:pb-8"
         >
           <p
@@ -142,39 +129,11 @@ const Portfolio = () => {
         </p>
 
         <motion.div
-          variants={portfolioVariants}
+          variants={textVariants}
           className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 pt-4 md:pt-6 sm:px-0"
         >
           {portfolios.map(({ id, src, liveUrl, gitUrl }) => (
-            <motion.div
-              variants={portfolioVariants}
-              key={id}
-              className="shadow-md shadow-gray-600 rounded-lg"
-            >
-              <img
-                src={src}
-                alt=""
-                className="rounded-md duration-200 hover:scale-105"
-              />
-              <div className="flex items-center justify-center">
-                <button
-                  onMouseEnter={mouseEnterHandler}
-                  onMouseLeave={mouseLeaveHandler}
-                  onClick={() => (window.location.href = liveUrl)}
-                  className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
-                >
-                  Demo
-                </button>
-                <button
-                  onMouseEnter={mouseEnterHandler}
-                  onMouseLeave={mouseLeaveHandler}
-                  onClick={() => (window.location.href = gitUrl)}
-                  className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
-                >
-                  Code
-                </button>
-              </div>
-            </motion.div>
+            <ProjectCard key={id} src={src} liveUrl={liveUrl} gitUrl={gitUrl} />
           ))}
         </motion.div>
       </motion.div>
