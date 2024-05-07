@@ -1,18 +1,10 @@
-import React, { useContext } from "react";
-import Project1 from "../assets/portfolio/Project-1.png";
-import Project2 from "../assets/portfolio/Project-2.png";
-import Project3 from "../assets/portfolio/Project-3.png";
-import Project4 from "../assets/portfolio/Project-4.png";
-import Project5 from "../assets/portfolio/Project-5.png";
-import Project6 from "../assets/portfolio/Project-6.png";
-import Project7 from "../assets/portfolio/Project7.jpg";
-import Project8 from "../assets/portfolio/Project8.jpg";
-import Project9 from "../assets/portfolio/Project9.jpg";
-import Project10 from "../assets/portfolio/Project10.png";
+import React, { useContext, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CursorContext } from "../context/CursorContext";
 import ProjectCard from "./ProjectCard";
+import { projects } from "../lib/ProjectData";
+import ProjectModal from "./ProjectModal";
 
 const textVariants = {
   initial: {
@@ -27,79 +19,16 @@ const textVariants = {
 };
 
 const Portfolio = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [modalInfo, setModalInfo] = useState(null);
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
   const isInView = useInView(ref, { triggerOnce: true });
 
-  const portfolios = [
-    {
-      id: 1,
-      src: Project7,
-      liveUrl: "https://bistro-cafe.netlify.app/",
-      gitUrl: "https://github.com/tanvir193palok/Restaurant_Website",
-    },
-    {
-      id: 2,
-      src: Project8,
-      liveUrl: "https://palok-gym.netlify.app/",
-      gitUrl: "https://github.com/tanvir193palok/Gym_Website",
-    },
-    {
-      id: 3,
-      src: Project9,
-      liveUrl: "https://tanvir-ahmed-palok-portfolio.netlify.app/",
-      gitUrl: "https://github.com/tanvir193palok/Portfolio_Website",
-    },
-    {
-      id: 4,
-      src: Project1,
-      liveUrl: "https://tanvir193palok.github.io/E-commerce-Site/",
-      gitUrl: "https://github.com/tanvir193palok/E-commerce-Site",
-    },
-    {
-      id: 5,
-      src: Project2,
-      liveUrl: "https://tanvir193palok.github.io/Quiz-Application/",
-      gitUrl: "https://github.com/tanvir193palok/Quiz-Application",
-    },
-    {
-      id: 6,
-      src: Project10,
-      liveUrl: "https://recipe-app2x4.netlify.app/",
-      gitUrl: "https://github.com/tanvir193palok/Recipe_App",
-    },
-    {
-      id: 7,
-      src: Project6,
-      liveUrl: "https://shimmering-wisp-8a5007.netlify.app/",
-      gitUrl: "https://github.com/tanvir193palok/PixelHarmony",
-    },
-    {
-      id: 8,
-      src: Project3,
-      liveUrl:
-        "https://653ebc0b7cf24033aad61f55--deluxe-kitten-e4a77b.netlify.app/",
-      gitUrl: "https://github.com/tanvir193palok/ThreeJS-Project",
-    },
-    {
-      id: 9,
-      src: Project4,
-      liveUrl: "https://tanvir193palok.github.io/MaterialUI-Project/",
-      gitUrl: "https://github.com/tanvir193palok/MaterialUI-Project",
-    },
-    // {
-    //   id: 10,
-    //   src: Project5,
-    //   liveUrl: "https://symphonious-genie-d5fd8f.netlify.app/",
-    //   gitUrl:
-    //     "https://github.com/tanvir193palok/Summarizer/tree/main/ai_summarizer",
-    // },
-  ];
-
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-black to-gray-800 w-full text-white py-10 md:py-20 px-4 md:px-0"
+      className="bg-gradient-to-b from-black to-gray-800 w-full text-white py-10 md:py-20 px-4 md:px-0 relative" // Add relative positioning
     >
       <motion.div
         variants={textVariants}
@@ -127,16 +56,25 @@ const Portfolio = () => {
         >
           Check out some of my work.
         </p>
-
         <motion.div
           variants={textVariants}
           className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 pt-4 md:pt-6 sm:px-0"
         >
-          {portfolios.map(({ id, src, liveUrl, gitUrl }) => (
-            <ProjectCard key={id} src={src} liveUrl={liveUrl} gitUrl={gitUrl} />
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              showModal={setShowModal}
+              updateModalInfo={setModalInfo}
+            />
           ))}
         </motion.div>
       </motion.div>
+      {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-70">
+          <ProjectModal modalInfo={modalInfo} showModal={setShowModal} />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { useContext, useRef } from "react";
-import { CursorContext } from "../context/CursorContext";
+import ProjectActions from "./ProjectActions";
+import { useRef } from "react";
 
 const portfolioVariants = {
   hidden: { x: -50, y: -50, opacity: 0 },
@@ -16,10 +16,16 @@ const portfolioVariants = {
   },
 };
 
-const ProjectCard = ({ src, liveUrl, gitUrl }) => {
-  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+const ProjectCard = ({ project, showModal, updateModalInfo }) => {
   const ref = useRef();
   const isInView = useInView(ref, { triggerOnce: true });
+
+  const { image, gitUrl, liveUrl } = project;
+
+  const handleClick = () => {
+    showModal(true);
+    updateModalInfo(project);
+  };
 
   return (
     <motion.div
@@ -27,31 +33,15 @@ const ProjectCard = ({ src, liveUrl, gitUrl }) => {
       initial="hidden"
       animate={isInView && "visible"}
       ref={ref}
+      onClick={handleClick}
       className="shadow-md shadow-gray-600 rounded-lg"
     >
       <img
-        src={src}
+        src={image}
         alt=""
         className="rounded-md duration-200 hover:scale-105"
       />
-      <div className="flex items-center justify-center">
-        <button
-          onMouseEnter={mouseEnterHandler}
-          onMouseLeave={mouseLeaveHandler}
-          onClick={() => (window.location.href = liveUrl)}
-          className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
-        >
-          Demo
-        </button>
-        <button
-          onMouseEnter={mouseEnterHandler}
-          onMouseLeave={mouseLeaveHandler}
-          onClick={() => (window.location.href = gitUrl)}
-          className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
-        >
-          Code
-        </button>
-      </div>
+      <ProjectActions gitUrl={gitUrl} liveUrl={liveUrl} />
     </motion.div>
   );
 };
