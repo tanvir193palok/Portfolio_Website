@@ -33,13 +33,13 @@ const ProjectCard = ({ project, showModal, updateModalInfo }) => {
       initial="hidden"
       animate={isInView && "visible"}
       ref={ref}
-      onClick={handleClick}
       className="shadow-md shadow-gray-600 rounded-lg"
     >
       <img
         src={image}
         alt=""
-        className="rounded-md duration-200 hover:scale-105"
+        onClick={handleClick}
+        className="rounded-md duration-200 hover:scale-105 cursor-pointer"
       />
       <ProjectActions gitUrl={gitUrl} liveUrl={liveUrl} />
     </motion.div>
