@@ -14,7 +14,7 @@ import TechStack from "./components/TechStack";
 
 const App = () => {
   const { cursorVariants, cursorBG } = useContext(CursorContext);
-  
+
   return (
     <div>
       <Navbar />

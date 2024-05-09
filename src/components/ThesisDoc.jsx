@@ -50,7 +50,7 @@ const ThesisDoc = () => {
           ref={ref}
           className="md:w-2/3 pt-10 z-10 font-md text-lg max-w-[70ch]"
         >
-          <p className="md:pt-10 text-sm md:text-lg">
+          <p className="md:pt-10 text-sm md:text-lg tracking-wide">
             <span className="font-semibold md:font-bold text-md md:text-xl">
               Abstract:{" "}
             </span>
@@ -85,7 +85,7 @@ const ThesisDoc = () => {
             variants={textVariants}
             className="pt-4 md:pt-10 text-sm md:text-lg"
           >
-            <span className="font-semibold md:font-bold text-md md:text-xl">
+            <span className="font-semibold md:font-bold text-md md:text-xl tracking-wide">
               Keywords:
             </span>{" "}
             Misdiagnosis, Deep learning, Ensemble learning, Confusion matrices,

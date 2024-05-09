@@ -30,21 +30,17 @@ const About = () => {
           ref={ref}
         >
           <div className="flex justify-center">
-            <p
-              className="text-2xl md:text-4xl leading-tight font-bold border-b-4 border-gray-500"
-            >
+            <p className="text-2xl md:text-4xl leading-tight font-bold border-b-4 border-gray-500">
               About
             </p>
           </div>
-          <div
-            className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full lg:flex-row"
-          >
+          <div className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full lg:flex-row">
             <div
               className="flex flex-col justify-center h-full w-full py-4 md:py-6"
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
             >
-              <p className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4">
+              <p className="text-sm md:text-lg text-justify tracking-tight max-w-[70ch] leading-normal md:pr-4">
                 Greetings! I am Palok from Dhaka, Bangladesh, a recent graduate
                 with a Bachelor of Science in Computer Science from BRAC
                 University. Throughout my academic journey, I have acquired
@@ -52,7 +48,7 @@ const About = () => {
               </p>
               <motion.p
                 variants={textVariants}
-                className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
+                className="text-sm md:text-lg text-justify tracking-tight max-w-[70ch] leading-normal md:pr-4 mt-4"
               >
                 My programming foundation began with core Java, where I honed my
                 problem-solving skills for data structures and algorithms. As
@@ -66,7 +62,7 @@ const About = () => {
               </motion.p>
               <motion.p
                 variants={textVariants}
-                className="text-sm md:text-lg text-center md:text-justify max-w-[70ch] leading-normal md:pr-4 mt-4"
+                className="text-sm md:text-lg text-justify tracking-tight max-w-[70ch] leading-normal md:pr-4 mt-4"
               >
                 In the realm of Software Engineering, I ventured into React,
                 broadening my expertise. Simultaneously, my academic exploration
@@ -87,7 +83,7 @@ const About = () => {
               <p
                 onMouseEnter={mouseEnterHandler}
                 onMouseLeave={mouseLeaveHandler}
-                className="text-sm md:text-lg max-w-[70ch] mt-4 md:mt-0 md:pl-4 text-center md:text-justify leading-normal"
+                className="text-sm md:text-lg max-w-[70ch] md:mt-0 md:pl-4 text-justify tracking-tight leading-normal"
               >
                 Currently, I am elevating my expertise in frontend development,
                 mastering React, Tailwind CSS, and exploring exciting tools like
