@@ -15,7 +15,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
   } = modalInfo;
 
   return (
-    <div className="relative w-[80%] h-[85%] mx-4 py-8 p-4 rounded-xl bg-slate-900 border-cyan-400 border-2">
+    <div className="relative w-[80%] h-[85%] p-4 rounded-xl bg-slate-900 border-cyan-400 border-2">
       <button
         onClick={() => showModal(false)}
         className="absolute top-3 right-4 flex items-center justify-center text-[30px]"
@@ -24,7 +24,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
       </button>
       <div className="flex flex-col lg:flex-row h-full items-center justify-center gap-x-12 text-center lg:text-left">
         {/* image */}
-        <div className="w-full lg:w-[40%] h-full bg-white rounded-lg overflow-hidden md:pb-10 md:pt-20">
+        <div className="w-full lg:w-[45%] h-full bg-white rounded-lg overflow-hidden md:pb-10 md:pt-20">
           <img
             src={image}
             alt={name}
@@ -33,7 +33,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
         </div>
 
         {/* text */}
-        <div className="w-full lg:w-[60%] pt-36 pb-14 md:pb-0 lg:pt-0 flex flex-col justify-center items-center lg:items-start">
+        <div className="w-full lg:w-[60%] my-6 flex flex-col justify-center items-center lg:items-start">
           <h1 className="pl-60 pb-6 text-3xl font-extrabold tracking-widest">
             {name}
           </h1>
@@ -42,7 +42,9 @@ const ProjectModal = ({ modalInfo, showModal }) => {
             <p className="font-semibold text-lg pb-2">Key Features :</p>
             <ul className="text-gray-300 text-sm tracking-wide">
               {keyFeatures.map((feature, index) => (
-                <li className="pb-1" key={index}>{feature}</li>
+                <li className="pb-1" key={index}>
+                  {feature}
+                </li>
               ))}
             </ul>
             <p className="font-semibold pt-2">Used Technologies :</p>
@@ -52,7 +54,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
                   <span
                     className={`inline-block whitespace-nowrap rounded-[10px] ${getColorByIndex(
                       index
-                    )} px-3 py-1 text-md tracking-wide capitalize text-white`}
+                    )} px-3 py-1 text-sm font-medium tracking-wide capitalize text-white`}
                   >
                     {tech}
                   </span>
@@ -66,7 +68,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
                   <span
                     className={`inline-block whitespace-nowrap rounded-[10px] ${getColorByIndex(
                       index
-                    )} px-3 py-1 text-md tracking-wide capitalize text-[#F4F5F6]`}
+                    )} px-3 py-1 text-sm font-medium tracking-wide capitalize text-[#F4F5F6]`}
                   >
                     {concept}
                   </span>
