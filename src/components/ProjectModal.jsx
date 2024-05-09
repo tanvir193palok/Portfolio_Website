@@ -15,7 +15,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
   } = modalInfo;
 
   return (
-    <div className="relative w-[80%] h-[80%] p-4 rounded-xl bg-slate-900 border-cyan-400 border-2 z-20">
+    <div className="relative w-[80%] h-[80%] p-4 rounded-xl bg-slate-900 border-cyan-400 border-2">
       <button
         onClick={() => showModal(false)}
         className="absolute top-3 right-4 flex items-center justify-center text-[30px]"
