@@ -15,7 +15,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
   } = modalInfo;
 
   return (
-    <div className="relative w-[80%] h-[85%] mx-4 my-8 p-4 rounded-xl bg-slate-900 border-cyan-400 border-2">
+    <div className="relative w-[80%] h-[85%] mx-4 py-8 p-4 rounded-xl bg-slate-900 border-cyan-400 border-2">
       <button
         onClick={() => showModal(false)}
         className="absolute top-3 right-4 flex items-center justify-center text-[30px]"
@@ -38,7 +38,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
             {name}
           </h1>
           <p className="pb-3 text-gray-300 text-md font-medium">{details}</p>
-          <div className="h-[420px]">
+          <div className="h-[400px]">
             <p className="font-semibold text-lg pb-2">Key Features :</p>
             <ul className="text-gray-300 text-sm tracking-wide">
               {keyFeatures.map((feature, index) => (
