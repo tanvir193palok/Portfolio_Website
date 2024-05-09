@@ -17,6 +17,7 @@ export const projects = [
   {
     id: 1,
     name: "Bistro Cafe",
+    isFeatured: false,
     details:
       "Well designed and animated website for a restaurant with some amazing features.",
     keyFeatures: [
@@ -34,6 +35,7 @@ export const projects = [
   {
     id: 2,
     name: "Gym me",
+    isFeatured: true,
     details:
       "Well designed and animated platform showcasing a Gym's curriculums.",
     keyFeatures: [
@@ -51,6 +53,7 @@ export const projects = [
   {
     id: 3,
     name: "Portfolio Website",
+    isFeatured: false,
     details:
       "My personal portfolio website showcasing my detailed information.",
     keyFeatures: [
@@ -74,6 +77,7 @@ export const projects = [
   {
     id: 4,
     name: "E-commerce Website",
+    isFeatured: false,
     details: "A multipage website to conduct functionality of a business.",
     keyFeatures: [
       "Multipage(Home page, prodcuts page, product details page, cart page, signin and register page) navigation using React Router Dom.",
@@ -93,6 +97,7 @@ export const projects = [
   {
     id: 5,
     name: "Quizzy",
+    isFeatured: true,
     details: "Multipage quiz platform with various functionality.",
     keyFeatures: [
       "Multipage(Login, signup, Home page, Quiz page, Result page) navigation using React Router Dom.",
@@ -114,6 +119,7 @@ export const projects = [
   {
     id: 6,
     name: "Recipe App",
+    isFeatured: false,
     details:
       "A basic website that fetches data from an API and visualize according to users preferences.",
     keyFeatures: [
@@ -130,6 +136,7 @@ export const projects = [
   {
     id: 7,
     name: "Pixel Harmony",
+    isFeatured: false,
     details:
       "A portfolio website for a photographer showcasing her skills in photography.",
     keyFeatures: [
@@ -151,6 +158,7 @@ export const projects = [
   {
     id: 8,
     name: "ThreeJS Project",
+    isFeatured: false,
     details:
       "A website showing a 3D model integration that can be used as a feature in E-commerce site.",
     keyFeatures: [
@@ -182,6 +190,7 @@ export const projects = [
   {
     id: 9,
     name: "Material UI Project",
+    isFeatured: false,
     details:
       "A basic social website design implemented with material UI features.",
     keyFeatures: [
@@ -208,6 +217,7 @@ export const projects = [
   {
     id: 10,
     name: "Eventry",
+    isFeatured: true,
     details:
       "Multipage website showing event information that user can attend.",
     keyFeatures: [
@@ -218,7 +228,7 @@ export const projects = [
       "Image optimization and handling blur placeholder.",
     ],
     usedTechnologies: [
-      "Next.js14",
+      "Next.js",
       "Tailwind CSS",
       "Mongoose",
       "MongoDB Atlas",
@@ -244,13 +254,14 @@ export const projects = [
   {
     id: 11,
     name: "EcoVista",
+    isFeatured: true,
     details: "A website showcasing weather details of a particular location.",
     keyFeatures: [
       "Current location detection using Geolocation API.",
       "Searching weather information based on some location provided in database.",
       "Fetching Weather information based on location using OpenWeatherMap API.",
     ],
-    usedTechnologies: ["Next.js14", "Tailwind CSS"],
+    usedTechnologies: ["Next.js", "Tailwind CSS"],
     concepts: [
       "Parallel Routing",
       "Dynamic Routing",
@@ -264,13 +275,14 @@ export const projects = [
   {
     id: 12,
     name: "MovieDB",
+    isFeatured: false,
     details: "Multipage website showing movie related details.",
     keyFeatures: [
       "Showing movie in homepage from a json file.",
       "Intercepting dynamic movie route and showing that dynamic data in a modal.",
       "Default language picker as well as language switcher functionality through Internationalization.",
     ],
-    usedTechnologies: ["Next.js14", "Tailwind CSS"],
+    usedTechnologies: ["Next.js", "Tailwind CSS"],
     concepts: [
       "Internationalization",
       "Intercepting Routes",
@@ -286,6 +298,7 @@ export const projects = [
   {
     id: 13,
     name: "LinkLoom",
+    isFeatured: true,
     details:
       "A simple social website for sharing post about day to day life containing various feature.",
     keyFeatures: [

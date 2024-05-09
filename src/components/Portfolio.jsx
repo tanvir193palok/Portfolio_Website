@@ -3,8 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CursorContext } from "../context/CursorContext";
 import ProjectCard from "./ProjectCard";
-import { projects } from "../lib/ProjectData";
 import ProjectModal from "./ProjectModal";
+import FilterItem from "./FilterItem";
 
 const textVariants = {
   initial: {
@@ -24,6 +24,8 @@ const Portfolio = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const ref = useRef();
   const isInView = useInView(ref, { triggerOnce: true });
+
+  const [selectedProjects, setSelectedProjects] = useState([]);
 
   return (
     <div
@@ -49,6 +51,7 @@ const Portfolio = () => {
             Portfolio
           </p>
         </motion.div>
+        <FilterItem setProjects={setSelectedProjects} />
         <p
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
@@ -60,7 +63,7 @@ const Portfolio = () => {
           variants={textVariants}
           className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 pt-4 md:pt-6 sm:px-0"
         >
-          {projects.map((project) => (
+          {selectedProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
