@@ -38,7 +38,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
             {name}
           </h1>
           <p className="pb-3 text-gray-300 text-md font-medium">{details}</p>
-          <div className="h-[400px]">
+          <div className="h-[380px]">
             <p className="font-semibold text-lg pb-2">Key Features :</p>
             <ul className="text-gray-300 text-sm tracking-wide">
               {keyFeatures.map((feature, index) => (

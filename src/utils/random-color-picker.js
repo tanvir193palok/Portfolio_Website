@@ -50,6 +50,16 @@ export const getColorByIndex = (index) => {
       style: "shadow-gray-400",
       text: "bg-gray-400",
     },
+    {
+      id: 10,
+      style: "shadow-gray-400",
+      text: "bg-teal-400",
+    },
+    {
+      id: 11,
+      style: "shadow-gray-400",
+      text: "bg-cyan-400",
+    },
   ];
 
   return colors[index].text;
