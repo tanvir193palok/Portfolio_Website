@@ -2,26 +2,18 @@ import { useEffect, useState } from "react";
 import { getColorByIndex } from "../utils/random-color-picker";
 import { getProjectsByCategory } from "../utils/filter-projects";
 import { projects } from "../lib/ProjectData";
+import { categories } from "../lib/CategoriesData";
+import { miniCategories } from "../lib/CategoriesData";
 
-const FilterItem = ({ setProjects }) => {
-  const categories = [
-    "Featured",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Material UI",
-    "Axios",
-    "All Projects",
-  ];
-  const miniCategories = ["Featured", "React", "Next.js", "All Projects"];
-
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+const FilterItem = ({ setProjects, setDescription }) => {
+  const [selectedCategory, setSelectedCategory] = useState(categories[0].name);
 
   useEffect(() => {
     setProjects(getProjectsByCategory(selectedCategory));
+    setDescription(categories[0]?.description);
   }, []);
 
-  function handleClick(category) {
+  function handleClick(category, description) {
     setSelectedCategory(category);
 
     if (category === "All Projects") {
@@ -29,6 +21,7 @@ const FilterItem = ({ setProjects }) => {
     } else {
       const filteredProjects = getProjectsByCategory(category);
       setProjects(filteredProjects);
+      setDescription(description);
     }
   }
 
@@ -39,14 +32,14 @@ const FilterItem = ({ setProjects }) => {
           <li
             key={index}
             className="text-center cursor-pointer"
-            onClick={() => handleClick(category)}
+            onClick={() => handleClick(category?.name, category?.description)}
           >
             <span
               className={`inline-block whitespace-nowrap rounded-[10px] transition-colors duration-300 ${
-                category === selectedCategory ? getColorByIndex(index) : ""
-              } px-5 py-2 text-md tracking-wide capitalize text-white`}
+                category.name === selectedCategory ? getColorByIndex(index) : ""
+              } px-5 py-2 text-lg font-bold tracking-wide capitalize text-white`}
             >
-              {category}
+              {category.name}
             </span>
           </li>
         ))}
@@ -56,14 +49,14 @@ const FilterItem = ({ setProjects }) => {
           <li
             key={index}
             className="text-center cursor-pointer"
-            onClick={() => handleClick(category)}
+            onClick={() => handleClick(category?.name, category?.description)}
           >
             <span
-              className={`inline-block whitespace-nowrap rounded-md md:rounded-[10px] transition-colors duration-300 ${
-                category === selectedCategory ? getColorByIndex(index) : ""
-              } px-3 md:px-5 py-1 md:py-2 text-sm md:text-md tracking-normal md:tracking-wide capitalize text-white`}
+              className={`inline-block whitespace-nowrap rounded-md transition-colors duration-300 ${
+                category.name === selectedCategory ? getColorByIndex(index) : ""
+              } px-3 py-1 text-sm tracking-normal capitalize text-white`}
             >
-              {category}
+              {category.name}
             </span>
           </li>
         ))}

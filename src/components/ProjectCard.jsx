@@ -41,7 +41,9 @@ const ProjectCard = ({ project, showModal, updateModalInfo }) => {
         onClick={handleClick}
         className="rounded-md duration-200 hover:scale-105 cursor-pointer"
       />
-      <ProjectActions gitUrl={gitUrl} liveUrl={liveUrl} />
+      <div className="m-4">
+        <ProjectActions gitUrl={gitUrl} liveUrl={liveUrl} />
+      </div>
     </motion.div>
   );
 };

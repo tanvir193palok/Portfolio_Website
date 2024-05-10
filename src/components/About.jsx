@@ -21,7 +21,7 @@ const About = () => {
     <>
       <div
         name="about"
-        className="w-full py-10 md:py-20 px-4 md:px-0 h-full md:h-screen bg-gradient-to-b from-gray-800 to-black text-white"
+        className="w-full py-10 px-4 md:px-0 h-full bg-gradient-to-b from-gray-800 to-black text-white"
       >
         <motion.div
           variants={textVariants}

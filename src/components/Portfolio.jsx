@@ -26,6 +26,7 @@ const Portfolio = () => {
   const isInView = useInView(ref, { triggerOnce: true });
 
   const [selectedProjects, setSelectedProjects] = useState([]);
+  const [description, setDescription] = useState("");
 
   return (
     <div
@@ -37,7 +38,7 @@ const Portfolio = () => {
         initial="initial"
         animate={isInView && "animate"}
         ref={ref}
-        className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full md:pt-40"
+        className="max-w-screen-xl mx-auto flex flex-col justify-center w-full h-full"
       >
         <motion.div
           variants={textVariants}
@@ -51,13 +52,16 @@ const Portfolio = () => {
             Portfolio
           </p>
         </motion.div>
-        <FilterItem setProjects={setSelectedProjects} />
+        <FilterItem
+          setProjects={setSelectedProjects}
+          setDescription={setDescription}
+        />
         <p
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
-          className="py-4 md:py-6 text-sm md:text-lg"
+          className="pt-6 md:pt-10 pb-4 md:pb-6 text-sm md:text-lg"
         >
-          Check out some of my work.
+          {description}
         </p>
         <motion.div
           variants={textVariants}

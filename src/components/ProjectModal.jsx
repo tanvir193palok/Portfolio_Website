@@ -76,7 +76,7 @@ const ProjectModal = ({ modalInfo, showModal }) => {
               ))}
             </ul>
           </div>
-          <div className="pt-4 pl-60">
+          <div className="pt-4 pl-52">
             <ProjectActions liveUrl={liveUrl} gitUrl={gitUrl} />
           </div>
         </div>
