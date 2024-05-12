@@ -25,14 +25,14 @@ const App = () => {
       <TechStack />
       <Contact />
       <SocialLinks />
-
-      {/* cursor */}
+      {/* 
       <motion.div
         variants={cursorVariants}
         animate={cursorBG}
         className="w-[32px] h-[32px] bg-white fixed top-0
       left-0 pointer-events-none z-50 rounded-full"
       ></motion.div>
+      */}
     </div>
   );
 };
